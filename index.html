@@ -3,185 +3,2395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | PASS Theological Seminary</title>
+
+    <title>PASS Theological Seminary | Equipping Leaders for Kingdom Ministry</title>
+
+    <meta name="description"
+          content="PASS Theological Seminary - Equipping faithful servants for gospel ministry, theological leadership, missions, and spiritual formation.">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="css/style.css">
+
     <style>
-        .logo-img {
-            height: 50px;
-            width: auto;
-            display: block;
+
+        /* =========================================================
+           PASS THEOLOGICAL SEMINARY
+           MODERN HOMEPAGE
+        ========================================================= */
+
+        :root {
+            --navy: #173b68;
+            --navy-dark: #0b2342;
+            --blue: #245b96;
+            --blue-light: #4d8fd1;
+            --gold: #d4ad72;
+            --gold-light: #efd19b;
+            --cream: #fffaf1;
+            --white: #ffffff;
+            --text: #24344d;
+            --muted: #65748b;
+            --light: #f5f8fc;
+            --border: #e5ebf2;
+            --shadow: 0 15px 45px rgba(18, 45, 76, 0.10);
+            --transition: all 0.35s ease;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* =========================================================
+           TOP BAR
+        ========================================================= */
+
+        .pass-topbar {
+            background:
+                linear-gradient(90deg,
+                    #102e52,
+                    #1c416e,
+                    #173b68);
+            color: white;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .pass-topbar-inner {
+            max-width: 1380px;
+            width: 92%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pass-contact-info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 14px;
+        }
+
+        .pass-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .pass-contact-item i {
+            color: var(--gold-light);
+        }
+
+        .pass-top-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .pass-top-social a {
+            width: 27px;
+            height: 27px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .pass-top-social a:hover {
+            background: rgba(255,255,255,0.15);
+            color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           MAIN HEADER
+        ========================================================= */
+
+        .pass-header {
+            height: 100px;
+            background: rgba(255,255,255,0.97);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(20,50,80,0.06);
+            box-shadow: 0 5px 25px rgba(20,40,70,0.06);
+            backdrop-filter: blur(15px);
+        }
+
+        .pass-header-inner {
+            max-width: 1380px;
+            width: 92%;
+            height: 100%;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* LOGO */
+
+        .pass-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--navy);
+        }
+
+        .pass-logo-img {
+            width: 66px;
+            height: 66px;
+            object-fit: contain;
+        }
+
+        .pass-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pass-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--navy);
+        }
+
+        .pass-brand-sub {
+            margin-top: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            color: #71829a;
+            text-transform: uppercase;
+        }
+
+        /* NAVIGATION */
+
+        .pass-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pass-nav a {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 17px;
+
+            color: #26354a;
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .pass-nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 4px;
+            left: 17px;
+            width: 0;
+            height: 3px;
+            border-radius: 5px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .pass-nav a:hover {
+            color: var(--navy);
+        }
+
+        .pass-nav a:hover::after,
+        .pass-nav a.active::after {
+            width: calc(100% - 34px);
+        }
+
+        .pass-nav a.active {
+            color: var(--gold);
+        }
+
+        /* Mobile Menu */
+
+        .pass-menu-toggle {
+            display: none;
+            border: none;
+            background: var(--navy);
+            color: white;
+
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .pass-hero {
+            min-height: 680px;
+            position: relative;
+            overflow: hidden;
+
+            background-image:
+                linear-gradient(
+                    110deg,
+                    rgba(7,31,58,0.88) 0%,
+                    rgba(16,54,91,0.70) 45%,
+                    rgba(19,65,103,0.56) 100%
+                ),
+                url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=2200&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .pass-hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(212,173,114,0.20),
+                    transparent 65%
+                );
+
+            top: -220px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .pass-hero::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    rgba(255,255,255,0.95)
+                );
+
+            pointer-events: none;
+        }
+
+        .pass-hero-inner {
+            position: relative;
+            z-index: 2;
+
+            max-width: 1380px;
+            width: 92%;
+            min-height: 680px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .pass-hero-content {
+            width: 720px;
+            padding: 70px 0;
+        }
+
+        .pass-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 9px 18px;
+
+            border: 1px solid rgba(239,209,155,0.55);
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 40px;
+
+            color: var(--gold-light);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .pass-eyebrow::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold-light);
+            box-shadow: 0 0 15px var(--gold-light);
+        }
+
+        .pass-hero h1 {
+            margin: 25px 0 20px;
+
+            color: white;
+
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(45px, 5vw, 76px);
+            line-height: 1.04;
+            font-weight: 700;
+
+            letter-spacing: -1.5px;
+
+            text-shadow:
+                0 5px 25px rgba(0,0,0,0.25);
+        }
+
+        .pass-hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .pass-hero-description {
+            max-width: 700px;
+
+            color: rgba(255,255,255,0.92);
+            font-size: 19px;
+            line-height: 1.8;
+
+            margin-bottom: 34px;
+        }
+
+        .pass-hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .pass-btn {
+            min-height: 57px;
+            padding: 0 29px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .pass-btn-primary {
+            color: #173b68;
+            background:
+                linear-gradient(
+                    135deg,
+                    #e9c889,
+                    #cfa666
+                );
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.20);
+        }
+
+        .pass-btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 17px 35px rgba(0,0,0,0.27);
+        }
+
+        .pass-btn-outline {
+            color: white;
+            border: 1px solid rgba(255,255,255,0.65);
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(10px);
+        }
+
+        .pass-btn-outline:hover {
+            background: white;
+            color: var(--navy);
+            transform: translateY(-4px);
+        }
+
+        /* Floating Hero Info */
+
+        .pass-hero-info {
+            position: absolute;
+            right: 0;
+            bottom: 70px;
+
+            display: flex;
+            gap: 12px;
+        }
+
+        .pass-hero-stat {
+            min-width: 150px;
+            padding: 18px 20px;
+
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 14px;
+
+            backdrop-filter: blur(14px);
+            color: white;
+
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .pass-hero-stat strong {
+            display: block;
+            color: var(--gold-light);
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+        }
+
+        .pass-hero-stat span {
+            display: block;
+            margin-top: 3px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .pass-intro {
+            position: relative;
+            padding: 95px 0 90px;
+            background: white;
+        }
+
+        .pass-container {
+            width: 92%;
+            max-width: 1240px;
+            margin: auto;
+        }
+
+        .pass-section-heading {
+            max-width: 760px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .pass-section-label {
+            display: inline-block;
+
+            margin-bottom: 13px;
+
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .pass-section-heading h2 {
+            margin: 0 0 15px;
+
+            color: var(--navy);
+
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 4vw, 48px);
+            line-height: 1.15;
+        }
+
+        .pass-section-heading p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .pass-intro-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .pass-feature-card {
+            position: relative;
+            overflow: hidden;
+
+            padding: 32px 25px;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            box-shadow: 0 8px 30px rgba(25,50,80,0.06);
+
+            transition: var(--transition);
+        }
+
+        .pass-feature-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--gold),
+                    var(--blue-light)
+                );
+
+            transform: scaleX(0);
+            transform-origin: left;
+
+            transition: var(--transition);
+        }
+
+        .pass-feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .pass-feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pass-feature-icon {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf5ff,
+                    #fff8eb
+                );
+
+            color: var(--navy);
+            font-size: 23px;
+        }
+
+        .pass-feature-card h3 {
+            margin: 0 0 10px;
+
+            color: var(--navy);
+            font-size: 18px;
+        }
+
+        .pass-feature-card p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* =========================================================
+           PROGRAMS
+        ========================================================= */
+
+        .pass-programs {
+            padding: 100px 0;
+            background:
+                linear-gradient(
+                    180deg,
+                    #f5f8fc,
+                    #eef4fa
+                );
+        }
+
+        .pass-program-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .pass-program-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+
+            border: 1px solid #e1e8f0;
+
+            box-shadow: 0 10px 30px rgba(25,50,80,0.07);
+
+            transition: var(--transition);
+        }
+
+        .pass-program-card:hover {
+            transform: translateY(-9px);
+            box-shadow: 0 20px 45px rgba(25,50,80,0.13);
+        }
+
+        .pass-program-top {
+            min-height: 145px;
+            padding: 27px;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #173b68,
+                    #2c649e
+                );
+
+            color: white;
+        }
+
+        .pass-program-card:nth-child(2) .pass-program-top {
+            background:
+                linear-gradient(
+                    135deg,
+                    #275b8f,
+                    #4b86b8
+                );
+        }
+
+        .pass-program-card:nth-child(3) .pass-program-top {
+            background:
+                linear-gradient(
+                    135deg,
+                    #73562f,
+                    #b08a4e
+                );
+        }
+
+        .pass-program-card:nth-child(4) .pass-program-top {
+            background:
+                linear-gradient(
+                    135deg,
+                    #4d3c73,
+                    #795da8
+                );
+        }
+
+        .pass-program-badge {
+            display: inline-block;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.16);
+            border: 1px solid rgba(255,255,255,0.22);
+
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .pass-program-top h3 {
+            margin: 16px 0 0;
+
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+        }
+
+        .pass-program-content {
+            padding: 25px;
+        }
+
+        .pass-program-content p {
+            min-height: 96px;
+
+            margin: 0 0 20px;
+
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .pass-program-meta {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 15px 0;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+
+            color: #687a91;
+            font-size: 12px;
+        }
+
+        .pass-program-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pass-program-meta i {
+            color: var(--gold);
+        }
+
+        .pass-program-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-top: 18px;
+
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: var(--transition);
+        }
+
+        .pass-program-link i {
+            transition: var(--transition);
+        }
+
+        .pass-program-link:hover {
+            color: var(--gold);
+        }
+
+        .pass-program-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* =========================================================
+           VERSE / MISSION
+        ========================================================= */
+
+        .pass-verse {
+            position: relative;
+            padding: 105px 0;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(7,30,55,0.96),
+                    rgba(20,61,101,0.94)
+                );
+            overflow: hidden;
+        }
+
+        .pass-verse::before {
+            content: "✦";
+
+            position: absolute;
+            left: 7%;
+            top: 20%;
+
+            color: rgba(239,209,155,0.15);
+            font-size: 150px;
+        }
+
+        .pass-verse::after {
+            content: "✦";
+
+            position: absolute;
+            right: 8%;
+            bottom: 5%;
+
+            color: rgba(239,209,155,0.10);
+            font-size: 180px;
+        }
+
+        .pass-verse-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 900px;
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .pass-verse-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: 0 auto 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            color: var(--gold-light);
+            border: 1px solid rgba(239,209,155,0.35);
+            background: rgba(255,255,255,0.07);
+
+            font-size: 25px;
+        }
+
+        .pass-verse blockquote {
+            margin: 0;
+
+            color: white;
+
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(27px, 3.2vw, 43px);
+            line-height: 1.35;
+        }
+
+        .pass-verse cite {
+            display: block;
+
+            margin-top: 22px;
+
+            color: var(--gold-light);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* =========================================================
+           CALL TO ACTION
+        ========================================================= */
+
+        .pass-cta {
+            padding: 90px 0;
+
+            background:
+                radial-gradient(
+                    circle at 15% 30%,
+                    rgba(212,173,114,0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fffaf1,
+                    #f4f8fc
+                );
+        }
+
+        .pass-cta-box {
+            position: relative;
+            overflow: hidden;
+
+            padding: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #173b68,
+                    #285d91
+                );
+
+            box-shadow:
+                0 25px 60px rgba(17,50,85,0.18);
+        }
+
+        .pass-cta-box::after {
+            content: "";
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            right: -130px;
+            top: -170px;
+
+            border: 60px solid rgba(255,255,255,0.04);
+        }
+
+        .pass-cta-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .pass-cta-text small {
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .pass-cta-text h2 {
+            margin: 12px 0 8px;
+
+            color: white;
+
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+        }
+
+        .pass-cta-text p {
+            margin: 0;
+
+            color: rgba(255,255,255,0.82);
+            font-size: 15px;
+        }
+
+        .pass-cta-button {
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+
+            padding: 17px 27px;
+
+            color: var(--navy);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #efd19b,
+                    #d2a968
+                );
+
+            border-radius: 8px;
+
+            font-size: 15px;
+            font-weight: 800;
+
+            box-shadow: 0 12px 25px rgba(0,0,0,0.16);
+
+            transition: var(--transition);
+        }
+
+        .pass-cta-button:hover {
+            transform: translateY(-4px);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .pass-footer {
+            background: #0c223e;
+            color: rgba(255,255,255,0.72);
+            padding-top: 70px;
+        }
+
+        .pass-footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 50px;
+            padding-bottom: 55px;
+        }
+
+        .pass-footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 20px;
+        }
+
+        .pass-footer-logo img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .pass-footer-logo strong {
+            display: block;
+
+            color: white;
+
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+        }
+
+        .pass-footer-logo span {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #aebdd0;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .pass-footer-description {
+            max-width: 390px;
+
+            color: rgba(255,255,255,0.65);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .pass-footer h3 {
+            margin: 4px 0 20px;
+
+            color: white;
+            font-size: 16px;
+        }
+
+        .pass-footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pass-footer li {
+            margin-bottom: 11px;
+        }
+
+        .pass-footer a {
+            color: rgba(255,255,255,0.65);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .pass-footer a:hover {
+            color: var(--gold-light);
+            padding-left: 4px;
+        }
+
+        .pass-footer-contact p {
+            display: flex;
+            gap: 11px;
+            margin: 0 0 15px;
+
+            color: rgba(255,255,255,0.65);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .pass-footer-contact i {
+            width: 17px;
+            color: var(--gold-light);
+            margin-top: 2px;
+        }
+
+        .pass-footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            padding: 22px 0;
+
+            text-align: center;
+
+            color: rgba(255,255,255,0.45);
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           SCROLL TO TOP
+        ========================================================= */
+
+        .pass-scroll-top {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--navy);
+            color: white;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+
+            cursor: pointer;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: var(--transition);
+
+            z-index: 999;
+        }
+
+        .pass-scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .pass-scroll-top:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .pass-nav a {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .pass-intro-grid,
+            .pass-program-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pass-hero-info {
+                display: none;
+            }
+
+            .pass-footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 850px) {
+
+            .pass-topbar {
+                min-height: 38px;
+            }
+
+            .pass-contact-info {
+                gap: 12px;
+                font-size: 11px;
+            }
+
+            .pass-top-social {
+                display: none;
+            }
+
+            .pass-header {
+                height: 78px;
+            }
+
+            .pass-logo-img {
+                width: 53px;
+                height: 53px;
+            }
+
+            .pass-brand {
+                font-size: 24px;
+            }
+
+            .pass-brand-sub {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .pass-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .pass-nav {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 78px;
+
+                background: white;
+
+                box-shadow: 0 15px 30px rgba(0,0,0,0.10);
+
+                display: none;
+            }
+
+            .pass-nav.open {
+                display: block;
+            }
+
+            .pass-nav ul {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 10px 20px 20px;
+            }
+
+            .pass-nav a {
+                display: block;
+                padding: 14px;
+                border-bottom: 1px solid #edf1f5;
+            }
+
+            .pass-nav a::after {
+                display: none;
+            }
+
+            .pass-hero {
+                min-height: 680px;
+                background-position: 60% center;
+            }
+
+            .pass-hero-inner {
+                min-height: 680px;
+            }
+
+            .pass-hero-content {
+                width: 100%;
+                padding-top: 55px;
+            }
+
+            .pass-hero h1 {
+                font-size: clamp(42px, 10vw, 60px);
+            }
+
+            .pass-hero-description {
+                font-size: 16px;
+            }
+
+            .pass-cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .pass-contact-info {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .pass-contact-item:nth-child(2) {
+                display: none;
+            }
+
+            .pass-header-inner {
+                width: 90%;
+            }
+
+            .pass-logo {
+                gap: 9px;
+            }
+
+            .pass-logo-img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .pass-brand {
+                font-size: 22px;
+            }
+
+            .pass-brand-sub {
+                font-size: 8px;
+            }
+
+            .pass-hero {
+                min-height: 700px;
+            }
+
+            .pass-hero-inner {
+                min-height: 700px;
+            }
+
+            .pass-eyebrow {
+                font-size: 10px;
+                letter-spacing: 1.3px;
+            }
+
+            .pass-hero h1 {
+                font-size: 43px;
+                letter-spacing: -0.5px;
+            }
+
+            .pass-hero-description {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .pass-hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .pass-btn {
+                width: 100%;
+            }
+
+            .pass-intro,
+            .pass-programs {
+                padding: 70px 0;
+            }
+
+            .pass-intro-grid,
+            .pass-program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pass-feature-card {
+                padding: 27px 22px;
+            }
+
+            .pass-program-content p {
+                min-height: auto;
+            }
+
+            .pass-verse {
+                padding: 75px 0;
+            }
+
+            .pass-verse blockquote {
+                font-size: 28px;
+            }
+
+            .pass-cta {
+                padding: 60px 0;
+            }
+
+            .pass-footer {
+                padding-top: 55px;
+            }
+
+            .pass-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .pass-footer-bottom {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
     </style>
 </head>
+
 <body>
 
-    <!-- Top Bar Info -->
-    <div class="top-bar">
-        <div class="container top-bar-content">
-            <div class="top-info">
-                <span><i class="fas fa-phone-alt"></i> +91 8839939678</span>
-                <span><i class="fas fa-envelope"></i> pts.pass2020@gmail.com</span>
+    <!-- =========================================================
+         TOP CONTACT BAR
+    ========================================================= -->
+
+    <div class="pass-topbar">
+
+        <div class="pass-topbar-inner">
+
+            <div class="pass-contact-info">
+
+                <div class="pass-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 8839939678</span>
+                </div>
+
+                <div class="pass-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>pts.pass2020@gmail.com</span>
+                </div>
+
             </div>
-            <div class="top-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
+            <div class="pass-top-social">
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
             </div>
+
         </div>
+
     </div>
 
-    <!-- Navigation Header -->
-    <!-- Navigation Header -->
-    <header class="main-header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo-area" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
-                <!-- Logo Image -->
-                <img src="images/logo.png" alt="PASS Logo" class="logo-img" style="height: 55px; width: auto; display: block;">
-                <!-- Brand Text Side-by-Side -->
-                <div class="logo-text" style="display: flex; flex-direction: column;">
-                    <span class="brand-title" style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #1a365d; line-height: 1.1;">PASS</span>
-                    <span class="brand-subtitle" style="font-family: 'Inter', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #718096; font-weight: 600;">Theological Seminary</span>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header class="pass-header">
+
+        <div class="pass-header-inner">
+
+            <a href="index.html" class="pass-logo">
+
+                <img src="images/logo.png"
+                     alt="PASS Theological Seminary Logo"
+                     class="pass-logo-img">
+
+                <div class="pass-logo-text">
+
+                    <span class="pass-brand">
+                        PASS
+                    </span>
+
+                    <span class="pass-brand-sub">
+                        Theological Seminary
+                    </span>
+
                 </div>
+
             </a>
-            
-            <button class="menu-toggle" aria-label="Toggle navigation">
+
+
+            <button class="pass-menu-toggle"
+                    id="passMenuToggle"
+                    aria-label="Open navigation menu">
+
                 <i class="fas fa-bars"></i>
+
             </button>
 
-            <nav class="nav-menu">
+
+            <nav class="pass-nav" id="passNav">
+
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="admission.html">Admission</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="downloads.html">Downloads</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+
+                    <li>
+                        <a href="index.html" class="active">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html">
+                            Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admission.html">
+                            Admission
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="gallery.html">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="downloads.html">
+                            Downloads
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
+
             </nav>
+
         </div>
+
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <span class="hero-tagline">Equipping Leaders for Kingdom Ministry</span>
-            <h1>Developing Theological Depth & Spiritual Maturity</h1>
-            <p>Join a community dedicated to biblical truth, academic excellence, and practical ministry preparation.</p>
-            <div class="hero-buttons">
-                <a href="admission.html" class="btn btn-primary">Apply Now</a>
-                <a href="courses.html" class="btn btn-secondary">Explore Programs</a>
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section class="pass-hero">
+
+        <div class="pass-hero-inner">
+
+            <div class="pass-hero-content"
+                 data-aos="fade-up"
+                 data-aos-duration="900">
+
+                <div class="pass-eyebrow">
+                    Equipping Leaders for Kingdom Ministry
+                </div>
+
+                <h1>
+                    Developing
+                    <span>Theological Depth</span>
+                    &amp;
+                    Spiritual Maturity
+                </h1>
+
+                <p class="pass-hero-description">
+
+                    Join a community dedicated to biblical truth,
+                    academic excellence, spiritual formation,
+                    and practical ministry preparation.
+
+                </p>
+
+                <div class="pass-hero-buttons">
+
+                    <a href="admission.html"
+                       class="pass-btn pass-btn-primary">
+
+                        <i class="fas fa-graduation-cap"></i>
+
+                        Apply for Admission
+
+                    </a>
+
+
+                    <a href="courses.html"
+                       class="pass-btn pass-btn-outline">
+
+                        Explore Programs
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
             </div>
+
+
+            <!-- Hero floating information -->
+
+            <div class="pass-hero-info">
+
+                <div class="pass-hero-stat">
+
+                    <strong>4+</strong>
+
+                    <span>
+                        Theological Programs
+                    </span>
+
+                </div>
+
+                <div class="pass-hero-stat">
+
+                    <strong>Christ</strong>
+
+                    <span>
+                        Centered Education
+                    </span>
+
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- Welcome / Brief About Section -->
-    <section class="welcome-section section-padding">
-        <div class="container grid-2">
-            <div class="welcome-text" data-aos="fade-right">
-                <span class="section-subtitle">Welcome to PTS</span>
-                <h2>Forming Reforming Minds & Hearts</h2>
-                <p>PASS Theological Seminary stands as a beacon of faithful biblical education. We are committed to fostering an environment where rigorous academic study meets vibrant spiritual formation, preparing you to serve the church and transform the world.</p>
-                <p>Whether you feel called to pastoral ministry, missions, Christian education, or deeper theological understanding, our programs are designed to anchor your faith firmly in God's Word.</p>
-                <a href="about.html" class="btn-text">Discover Our Vision & Mission <i class="fas fa-arrow-right"></i></a>
+
+    <!-- =========================================================
+         WELCOME / FEATURES
+    ========================================================= -->
+
+    <section class="pass-intro">
+
+        <div class="pass-container">
+
+            <div class="pass-section-heading"
+                 data-aos="fade-up">
+
+                <span class="pass-section-label">
+                    Welcome to PASS
+                </span>
+
+                <h2>
+                    Faith, Knowledge &amp; Calling
+                </h2>
+
+                <p>
+                    Preparing men and women to faithfully serve Christ
+                    through sound theological education, spiritual
+                    formation, and practical ministry.
+                </p>
+
             </div>
-            <div class="welcome-image" data-aos="fade-left">
-                <div class="image-frame">
-                    <div class="frame-accent"></div>
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" alt="Seminary Campus Life" class="responsive-img">
+
+
+            <div class="pass-intro-grid">
+
+
+                <!-- Feature 1 -->
+
+                <div class="pass-feature-card"
+                     data-aos="fade-up"
+                     data-aos-delay="50">
+
+                    <div class="pass-feature-icon">
+                        <i class="fas fa-book-bible"></i>
+                    </div>
+
+                    <h3>
+                        Biblical Foundation
+                    </h3>
+
+                    <p>
+                        Build your ministry on a strong foundation
+                        of Scripture and faithful biblical teaching.
+                    </p>
+
                 </div>
+
+
+                <!-- Feature 2 -->
+
+                <div class="pass-feature-card"
+                     data-aos="fade-up"
+                     data-aos-delay="100">
+
+                    <div class="pass-feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+
+                    <h3>
+                        Academic Excellence
+                    </h3>
+
+                    <p>
+                        Develop theological understanding through
+                        structured and purposeful academic study.
+                    </p>
+
+                </div>
+
+
+                <!-- Feature 3 -->
+
+                <div class="pass-feature-card"
+                     data-aos="fade-up"
+                     data-aos-delay="150">
+
+                    <div class="pass-feature-icon">
+                        <i class="fas fa-hands-praying"></i>
+                    </div>
+
+                    <h3>
+                        Spiritual Formation
+                    </h3>
+
+                    <p>
+                        Grow in spiritual maturity, character,
+                        prayer, discipleship, and Christian service.
+                    </p>
+
+                </div>
+
+
+                <!-- Feature 4 -->
+
+                <div class="pass-feature-card"
+                     data-aos="fade-up"
+                     data-aos-delay="200">
+
+                    <div class="pass-feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+
+                    <h3>
+                        Ministry &amp; Mission
+                    </h3>
+
+                    <p>
+                        Prepare to serve faithfully in churches,
+                        missions, communities, and ministry contexts.
+                    </p>
+
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Pillars / Features Section -->
-    <section class="pillars-section section-padding bg-light">
-        <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <h2>Why Choose PASS?</h2>
-                <p>Our foundational pillars ensure a holistic and impactful educational journey.</p>
+
+    <!-- =========================================================
+         PROGRAMS
+    ========================================================= -->
+
+    <section class="pass-programs">
+
+        <div class="pass-container">
+
+            <div class="pass-section-heading"
+                 data-aos="fade-up">
+
+                <span class="pass-section-label">
+                    Academic Programs
+                </span>
+
+                <h2>
+                    Discover Your Calling
+                </h2>
+
+                <p>
+                    Explore our theological programs and find the
+                    pathway that best fits your ministry calling
+                    and educational goals.
+                </p>
+
             </div>
-            <div class="grid-3 mapping-pillars">
-                <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="pillar-icon"><i class="fas fa-book-open"></i></div>
-                    <h3>Sound Doctrine</h3>
-                    <p>Uncompromising commitment to the authority of Scripture and historical Christian orthodoxy.</p>
-                </div>
-                <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pillar-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Academic Excellence</h3>
-                    <p>Rigorous curriculum taught by experienced faculty members dedicated to your growth.</p>
-                </div>
-                <div class="pillar-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pillar-icon"><i class="fas fa-pray"></i></div>
-                    <h3>Spiritual Formation</h3>
-                    <p>A vibrant, supportive community focused on prayer, mentorship, and character development.</p>
-                </div>
+
+
+            <div class="pass-program-grid">
+
+
+                <!-- C.Th -->
+
+                <article class="pass-program-card"
+                         data-aos="fade-up"
+                         data-aos-delay="50">
+
+                    <div class="pass-program-top">
+
+                        <span class="pass-program-badge">
+                            Certificate
+                        </span>
+
+                        <h3>
+                            C.Th.
+                        </h3>
+
+                    </div>
+
+                    <div class="pass-program-content">
+
+                        <p>
+                            A foundational theological program
+                            designed to strengthen biblical knowledge,
+                            Christian ministry understanding,
+                            and practical service.
+                        </p>
+
+                        <div class="pass-program-meta">
+
+                            <span>
+                                <i class="far fa-clock"></i>
+                                Flexible
+                            </span>
+
+                            <span>
+                                <i class="fas fa-book"></i>
+                                Theology
+                            </span>
+
+                        </div>
+
+                        <a href="courses.html#cth"
+                           class="pass-program-link">
+
+                            View Course Details
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- D.Th -->
+
+                <article class="pass-program-card"
+                         data-aos="fade-up"
+                         data-aos-delay="100">
+
+                    <div class="pass-program-top">
+
+                        <span class="pass-program-badge">
+                            Diploma
+                        </span>
+
+                        <h3>
+                            D.Th.
+                        </h3>
+
+                    </div>
+
+                    <div class="pass-program-content">
+
+                        <p>
+                            Designed for deeper theological study
+                            and ministry development for those
+                            seeking stronger preparation for service.
+                        </p>
+
+                        <div class="pass-program-meta">
+
+                            <span>
+                                <i class="far fa-clock"></i>
+                                Flexible
+                            </span>
+
+                            <span>
+                                <i class="fas fa-book"></i>
+                                Theology
+                            </span>
+
+                        </div>
+
+                        <a href="courses.html#dth"
+                           class="pass-program-link">
+
+                            View Course Details
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- B.Th -->
+
+                <article class="pass-program-card"
+                         data-aos="fade-up"
+                         data-aos-delay="150">
+
+                    <div class="pass-program-top">
+
+                        <span class="pass-program-badge">
+                            Undergraduate
+                        </span>
+
+                        <h3>
+                            B.Th.
+                        </h3>
+
+                    </div>
+
+                    <div class="pass-program-content">
+
+                        <p>
+                            A comprehensive undergraduate theological
+                            program covering biblical studies, systematic
+                            theology, church history, and practical ministry.
+                        </p>
+
+                        <div class="pass-program-meta">
+
+                            <span>
+                                <i class="far fa-clock"></i>
+                                3 Years
+                            </span>
+
+                            <span>
+                                <i class="fas fa-book"></i>
+                                Full-Time
+                            </span>
+
+                        </div>
+
+                        <a href="courses.html#bth"
+                           class="pass-program-link">
+
+                            View Course Details
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- M.Div -->
+
+                <article class="pass-program-card"
+                         data-aos="fade-up"
+                         data-aos-delay="200">
+
+                    <div class="pass-program-top">
+
+                        <span class="pass-program-badge">
+                            Postgraduate
+                        </span>
+
+                        <h3>
+                            M.Div.
+                        </h3>
+
+                    </div>
+
+                    <div class="pass-program-content">
+
+                        <p>
+                            An advanced program designed to equip
+                            Christian leaders for theological depth,
+                            pastoral ministry, and practical service.
+                        </p>
+
+                        <div class="pass-program-meta">
+
+                            <span>
+                                <i class="far fa-clock"></i>
+                                2–3 Years
+                            </span>
+
+                            <span>
+                                <i class="fas fa-book"></i>
+                                Full-Time
+                            </span>
+
+                        </div>
+
+                        <a href="courses.html#mdiv"
+                           class="pass-program-link">
+
+                            View Course Details
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Quick Links / Action Sections -->
-    <section class="cta-banner section-padding">
-        <div class="container text-center" data-aos="zoom-in">
-            <h2>Ready to Take the Next Step?</h2>
-            <p>Admissions for the upcoming academic year are currently open. Download our information package and prospectus today.</p>
-            <div class="cta-buttons">
-                <a href="admission.html" class="btn btn-light"><i class="fas fa-file-download"></i> Admissions Details</a>
-                <a href="contact.html" class="btn btn-outline-light">Talk to an Advisor</a>
+
+    <!-- =========================================================
+         SCRIPTURE SECTION
+    ========================================================= -->
+
+    <section class="pass-verse">
+
+        <div class="pass-container">
+
+            <div class="pass-verse-content"
+                 data-aos="zoom-in">
+
+                <div class="pass-verse-icon">
+
+                    <i class="fas fa-cross"></i>
+
+                </div>
+
+                <blockquote>
+                    "Study to shew thyself approved unto God,
+                    a workman that needeth not to be ashamed,
+                    rightly dividing the word of truth."
+                </blockquote>
+
+                <cite>
+                    — 2 Timothy 2:15
+                </cite>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <div class="logo-area light">
-                    <!-- Integrated inverted logo for dark background footer -->
-                    <img src="images/logo.png" alt="PASS Logo Light" class="logo-img" style="height: 55px; width: auto; display: block; border-radius: 4px;">
+
+    <!-- =========================================================
+         ADMISSION CTA
+    ========================================================= -->
+
+    <section class="pass-cta">
+
+        <div class="pass-container">
+
+            <div class="pass-cta-box"
+                 data-aos="fade-up">
+
+                <div class="pass-cta-text">
+
+                    <small>
+                        Your Journey Starts Here
+                    </small>
+
+                    <h2>
+                        Your Calling Deserves Preparation.
+                    </h2>
+
+                    <p>
+                        Take the next step toward theological education
+                        and faithful Kingdom service.
+                    </p>
+
                 </div>
-                <p style="margin-top: 20px;">Equipping faithful servants for gospel ministry, cross-cultural missions, and theological leadership.</p>
+
+                <a href="admission.html"
+                   class="pass-cta-button">
+
+                    <i class="fas fa-arrow-right"></i>
+
+                    Start Your Application
+
+                </a>
+
             </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Our Programs</a></li>
-                    <li><a href="admission.html">Admissions</a></li>
-                    <li><a href="gallery.html">Campus Gallery</a></li>
-                    <li><a href="downloads.html">Downloads</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Info</h3>
-                <p><i class="fas fa-phone-alt"></i> +91 8839939678</p>
-                <p><i class="fas fa-envelope"></i> pts.pass2020@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> GitHub Pages Hosted</p>
-            </div>
+
         </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2026 PASS Theological Seminary. All Rights Reserved.</p>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer class="pass-footer">
+
+        <div class="pass-container">
+
+            <div class="pass-footer-grid">
+
+
+                <!-- About -->
+
+                <div>
+
+                    <div class="pass-footer-logo">
+
+                        <img src="images/logo.png"
+                             alt="PASS Logo">
+
+                        <div>
+
+                            <strong>PASS</strong>
+
+                            <span>
+                                Theological Seminary
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p class="pass-footer-description">
+
+                        Equipping faithful servants for gospel ministry,
+                        theological leadership, spiritual formation,
+                        cross-cultural missions, and Christian service.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Quick Links -->
+
+                <div>
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="about.html">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="courses.html">
+                                Academic Programs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admission.html">
+                                Admissions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="gallery.html">
+                                Campus Gallery
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Programs -->
+
+                <div>
+
+                    <h3>
+                        Programs
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="courses.html#cth">
+                                C.Th.
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="courses.html#dth">
+                                D.Th.
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="courses.html#bth">
+                                B.Th.
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="courses.html#mdiv">
+                                M.Div.
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Contact -->
+
+                <div class="pass-footer-contact">
+
+                    <h3>
+                        Contact Information
+                    </h3>
+
+                    <p>
+                        <i class="fas fa-phone"></i>
+
+                        <span>
+                            +91 8839939678
+                        </span>
+                    </p>
+
+                    <p>
+                        <i class="fas fa-envelope"></i>
+
+                        <span>
+                            pts.pass2020@gmail.com
+                        </span>
+                    </p>
+
+                    <p>
+                        <i class="fas fa-location-dot"></i>
+
+                        <span>
+                            PASS Theological Seminary
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
+
+
+        <div class="pass-footer-bottom">
+
+            © 2026 PASS Theological Seminary.
+            All Rights Reserved.
+
+        </div>
+
     </footer>
 
-    <!-- AOS Scroll Animation Script -->
+
+    <!-- =========================================================
+         SCROLL TOP
+    ========================================================= -->
+
+    <button class="pass-scroll-top"
+            id="passScrollTop"
+            aria-label="Scroll to top">
+
+        <i class="fas fa-chevron-up"></i>
+
+    </button>
+
+
+    <!-- =========================================================
+         AOS
+    ========================================================= -->
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+
         AOS.init({
-            once: true
+            once: true,
+            duration: 700,
+            easing: 'ease-out-cubic'
         });
+
     </script>
-    <!-- Custom JavaScript -->
+
+
+    <!-- =========================================================
+         MOBILE MENU + SCROLL
+    ========================================================= -->
+
+    <script>
+
+        const passMenuToggle =
+            document.getElementById('passMenuToggle');
+
+        const passNav =
+            document.getElementById('passNav');
+
+        passMenuToggle.addEventListener('click', function () {
+
+            passNav.classList.toggle('open');
+
+            const icon =
+                this.querySelector('i');
+
+            if (passNav.classList.contains('open')) {
+
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+
+            } else {
+
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+
+            }
+
+        });
+
+
+        /* Close mobile menu after selecting a link */
+
+        document.querySelectorAll('.pass-nav a').forEach(link => {
+
+            link.addEventListener('click', function () {
+
+                passNav.classList.remove('open');
+
+                const icon =
+                    passMenuToggle.querySelector('i');
+
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+
+            });
+
+        });
+
+
+        /* Scroll to top */
+
+        const passScrollTop =
+            document.getElementById('passScrollTop');
+
+        window.addEventListener('scroll', function () {
+
+            if (window.scrollY > 500) {
+
+                passScrollTop.classList.add('show');
+
+            } else {
+
+                passScrollTop.classList.remove('show');
+
+            }
+
+        });
+
+
+        passScrollTop.addEventListener('click', function () {
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        });
+
+    </script>
+
+
+    <!-- Existing JavaScript -->
     <script src="js/script.js"></script>
+
 </body>
 </html>
