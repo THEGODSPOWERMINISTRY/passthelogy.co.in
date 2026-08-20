@@ -9,151 +9,208 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-    <!-- Main CSS -->
+    <!-- Main Website CSS -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
 
         /* =========================================================
-           COURSES PAGE
+           COURSE PAGE
         ========================================================= */
 
-        .page-banner {
-            position: relative;
-            background:
-                url("https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1920&q=85")
-                center center / cover no-repeat;
-            padding: 100px 20px;
-            color: var(--white);
-            text-align: center;
+        :root {
+            --course-blue: #1a365d;
+            --course-blue-dark: #122b4d;
+            --course-gold: #c8a878;
+            --course-light: #f5f8fb;
+            --course-border: #dfe6ee;
+            --course-text: #536176;
+            --course-white: #ffffff;
+            --course-red: #e53e3e;
         }
 
-        .page-banner-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(26, 54, 93, 0.86);
+        * {
+            box-sizing: border-box;
         }
 
-        .page-banner-content {
-            position: relative;
-            z-index: 2;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f6f9fc;
+            color: var(--course-text);
         }
-
-        .page-banner h1 {
-            color: #ffffff;
-            font-family: "Playfair Display", serif;
-            font-size: 44px;
-            margin-bottom: 12px;
-        }
-
-        .page-banner p {
-            color: #ffffff;
-            font-size: 17px;
-            margin: 0;
-        }
-
 
         /* =========================================================
-           COURSE SECTION
+           PAGE BANNER
         ========================================================= */
 
-        .courses-section {
-            background: #f7fafc;
-            padding: 80px 0;
-        }
-
-        .course-intro {
-            max-width: 850px;
-            margin: 0 auto 50px;
+        .courses-banner {
+            position: relative;
+            min-height: 330px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(20, 48, 82, 0.88),
+                    rgba(20, 48, 82, 0.88)
+                ),
+                url("https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1920&q=85")
+                center/cover no-repeat;
         }
 
-        .course-intro h2 {
-            color: #1a365d;
-            font-family: "Playfair Display", serif;
-            font-size: 36px;
-            margin-bottom: 12px;
+        .courses-banner-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px 20px;
         }
 
-        .course-intro p {
-            color: #4a5568;
+        .courses-banner h1 {
+            margin: 0 0 12px;
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 700;
+        }
+
+        .courses-banner p {
+            margin: 0;
+            color: #ffffff;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .courses-intro {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 70px 20px 35px;
+        }
+
+        .courses-intro h2 {
+            margin-bottom: 14px;
+            color: var(--course-blue);
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+        }
+
+        .courses-intro p {
             font-size: 16px;
             line-height: 1.8;
         }
-
 
         /* =========================================================
            COURSE GRID
         ========================================================= */
 
-        .courses-grid {
+        .course-page-wrapper {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 20px 20px 90px;
+        }
+
+        .course-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 30px;
         }
 
-        .course-card {
+        /* =========================================================
+           COURSE CARD
+        ========================================================= */
+
+        .course-box {
             background: #ffffff;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--course-border);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(26, 54, 93, 0.07);
-            transition: all 0.35s ease;
+            transition: all 0.3s ease;
         }
 
-        .course-card:hover {
-            transform: translateY(-6px);
+        .course-box:hover {
+            transform: translateY(-5px);
             box-shadow: 0 18px 40px rgba(26, 54, 93, 0.13);
         }
 
-        .course-card-header {
-            padding: 30px 30px 25px;
+        .course-image {
+            height: 210px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .course-box:hover .course-image img {
+            transform: scale(1.05);
+        }
+
+        .course-image-overlay {
+            position: absolute;
+            inset: 0;
             background: linear-gradient(
-                135deg,
-                #1a365d 0%,
-                #234675 100%
+                to top,
+                rgba(10, 30, 55, 0.65),
+                rgba(10, 30, 55, 0.05)
             );
-            color: #ffffff;
         }
 
-        .course-badge {
-            display: inline-block;
-            padding: 7px 14px;
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.25);
+        .course-code {
+            position: absolute;
+            bottom: 18px;
+            left: 22px;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 14px;
             border-radius: 30px;
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.7px;
-            margin-bottom: 15px;
+
+            background: rgba(255,255,255,0.95);
+            color: var(--course-blue);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
-        .course-card-header h3 {
-            color: #ffffff;
-            font-family: "Playfair Display", serif;
+        .course-content {
+            padding: 28px;
+        }
+
+        .course-content h2 {
+            margin: 0 0 12px;
+            color: var(--course-blue);
             font-size: 27px;
-            margin: 0 0 10px;
+            font-weight: 800;
         }
 
-        .course-card-header p {
-            color: rgba(255,255,255,0.88);
-            margin: 0;
-            line-height: 1.7;
-            font-size: 14px;
+        .course-description {
+            margin: 0 0 22px;
+            line-height: 1.75;
+            font-size: 15px;
         }
-
 
         /* =========================================================
            COURSE META
@@ -161,60 +218,70 @@
 
         .course-meta {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            padding: 20px 30px;
-            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 20px;
         }
 
-        .meta-item {
+        .course-meta-item {
             display: flex;
             align-items: center;
-            gap: 9px;
+            gap: 10px;
+
+            padding: 13px;
+            background: #f7fafc;
+            border: 1px solid #e7edf3;
+            border-radius: 8px;
+
             color: #718096;
             font-size: 14px;
         }
 
-        .meta-item i {
-            color: #c7a77a;
+        .course-meta-item i {
+            color: var(--course-gold);
             width: 18px;
+            text-align: center;
         }
 
-
         /* =========================================================
-           DETAILS BUTTON
+           DETAILS TOGGLE
         ========================================================= */
 
         .details-toggle {
-            width: calc(100% - 60px);
-            margin: 25px 30px 0;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
             padding: 13px 17px;
-            background: #f8fafc;
-            border: 2px solid #1a365d;
+
+            background: #ffffff;
+            border: 2px solid #1b1b1b;
             border-radius: 8px;
-            color: #1a365d;
+
+            color: var(--course-blue);
+            font-family: 'Inter', sans-serif;
             font-size: 15px;
             font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
             cursor: pointer;
             transition: all 0.25s ease;
         }
 
         .details-toggle:hover {
-            background: #1a365d;
+            background: var(--course-blue);
             color: #ffffff;
+            border-color: var(--course-blue);
         }
 
         .details-toggle i {
-            transition: transform 0.25s ease;
+            transition: transform 0.3s ease;
         }
 
-        .details-toggle.open i {
+        .details-toggle.active i {
             transform: rotate(180deg);
         }
-
 
         /* =========================================================
            COURSE DETAILS
@@ -222,18 +289,18 @@
 
         .course-details {
             display: none;
-            padding: 25px 30px 30px;
+            padding-top: 28px;
         }
 
         .course-details.show {
             display: block;
-            animation: detailsFade 0.3s ease;
+            animation: detailsFade 0.35s ease;
         }
 
         @keyframes detailsFade {
             from {
                 opacity: 0;
-                transform: translateY(-5px);
+                transform: translateY(-8px);
             }
 
             to {
@@ -242,243 +309,283 @@
             }
         }
 
-        .course-details h4 {
-            color: #1a365d;
-            font-size: 17px;
+        .course-details h3 {
             margin: 0 0 14px;
+            color: var(--course-blue);
+            font-size: 18px;
+            font-weight: 800;
         }
 
         .course-details p {
-            color: #4a5568;
             line-height: 1.75;
-            font-size: 14px;
         }
 
         .curriculum-list {
+            margin: 0 0 28px;
             padding-left: 20px;
-            margin: 0;
         }
 
         .curriculum-list li {
-            color: #4a5568;
             margin-bottom: 9px;
             line-height: 1.55;
-            font-size: 14px;
         }
 
         .curriculum-list li::marker {
-            color: #c7a77a;
+            color: var(--course-gold);
         }
-
 
         /* =========================================================
-           DOCUMENT SECTION
+           DOWNLOAD SECTION
         ========================================================= */
 
-        .document-section {
-            margin-top: 28px;
-            padding-top: 25px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .document-section h4 {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            margin-bottom: 15px;
-        }
-
-        .document-section h4 i {
-            color: #e53e3e;
+        .documents-title {
+            margin-top: 30px !important;
+            padding-top: 24px;
+            border-top: 1px solid #e4eaf0;
         }
 
         .document-list {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            margin-top: 15px;
         }
 
-        .document-item {
+        .document-link {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 13px 15px;
+            gap: 12px;
+
+            min-height: 52px;
+            padding: 12px 15px;
+
             background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #e1e7ee;
             border-radius: 8px;
-        }
 
-        .document-name {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            color: #334155;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .document-name i {
-            color: #e53e3e;
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-
-        .document-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 8px 13px;
-            background: #1a365d;
-            color: #ffffff !important;
-            border-radius: 6px;
-            text-decoration: none !important;
-            font-size: 12px;
+            color: var(--course-blue);
+            text-decoration: none;
+            font-size: 14px;
             font-weight: 700;
-            white-space: nowrap;
+
             transition: all 0.25s ease;
         }
 
-        .document-btn:hover {
-            background: #c7a77a;
-            color: #ffffff !important;
-            transform: translateY(-1px);
+        .document-link:hover {
+            background: #edf3f8;
+            border-color: var(--course-blue);
+            transform: translateX(3px);
         }
 
+        .document-link .pdf-icon {
+            flex: 0 0 auto;
+            color: var(--course-red);
+            font-size: 21px;
+        }
+
+        .document-link .download-icon {
+            margin-left: auto;
+            color: var(--course-blue);
+        }
 
         /* =========================================================
-           COMMON APPLICATION FORM
+           COMMON APPLICATION
         ========================================================= */
 
-        .common-form {
-            border-color: #d8c09a;
-            background: #fffaf2;
+        .common-application {
+            margin-top: 22px;
+            padding: 18px;
+
+            background: linear-gradient(
+                135deg,
+                #f7f1e7,
+                #ffffff
+            );
+
+            border: 1px solid #e4d2b5;
+            border-radius: 9px;
         }
 
-        .common-form .document-name i {
-            color: #c7a77a;
+        .common-application-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 10px;
+
+            color: var(--course-blue);
+            font-weight: 800;
+            font-size: 15px;
         }
 
-        .common-form .document-btn {
-            background: #c7a77a;
+        .common-application-title i {
+            color: var(--course-gold);
         }
 
-        .common-form .document-btn:hover {
-            background: #1a365d;
+        .common-application p {
+            margin: 0 0 13px;
+            font-size: 13px;
         }
 
-        .common-note {
-            margin-top: 9px;
-            color: #718096;
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .course-action-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .course-btn {
+            min-height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 12px 15px;
+
+            border-radius: 7px;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: all 0.25s ease;
+        }
+
+        .course-btn-primary {
+            background: var(--course-blue);
+            color: #ffffff;
+        }
+
+        .course-btn-primary:hover {
+            background: var(--course-blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .course-btn-light {
+            background: #f7f1e7;
+            border: 1px solid #e3d0af;
+            color: var(--course-blue);
+        }
+
+        .course-btn-light:hover {
+            background: #efe4d2;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           APPLICATION BUTTON INSIDE DOCUMENTS
+        ========================================================= */
+
+        .application-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            width: 100%;
+            min-height: 48px;
+
+            padding: 12px 16px;
+
+            border-radius: 7px;
+
+            background: var(--course-blue);
+            color: #ffffff;
+
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: all 0.25s ease;
+        }
+
+        .application-link:hover {
+            background: var(--course-blue-dark);
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           COURSE STATUS
+        ========================================================= */
+
+        .course-status {
+            display: inline-block;
+            margin-bottom: 12px;
+
+            padding: 6px 11px;
+            border-radius: 20px;
+
+            background: #edf3f8;
+            color: var(--course-blue);
+
             font-size: 12px;
-            line-height: 1.5;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
 
         /* =========================================================
-           BOTTOM NOTE
-        ========================================================= */
-
-        .course-note {
-            margin-top: 45px;
-            padding: 25px 30px;
-            background: #ffffff;
-            border-left: 4px solid #c7a77a;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(26,54,93,0.05);
-        }
-
-        .course-note h3 {
-            color: #1a365d;
-            font-family: "Playfair Display", serif;
-            margin-bottom: 8px;
-        }
-
-        .course-note p {
-            color: #4a5568;
-            margin: 0;
-            line-height: 1.7;
-        }
-
-
-        /* =========================================================
-           MOBILE
+           RESPONSIVE
         ========================================================= */
 
         @media (max-width: 900px) {
 
-            .courses-grid {
+            .course-grid {
                 grid-template-columns: 1fr;
             }
 
+            .course-page-wrapper {
+                max-width: 700px;
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
 
-            .page-banner {
-                padding: 75px 20px;
+            .courses-banner {
+                min-height: 280px;
             }
 
-            .page-banner h1 {
-                font-size: 34px;
+            .courses-banner h1 {
+                font-size: 38px;
             }
 
-            .courses-section {
-                padding: 55px 0;
+            .courses-banner p {
+                font-size: 15px;
             }
 
-            .course-intro h2 {
+            .courses-intro {
+                padding-top: 50px;
+            }
+
+            .courses-intro h2 {
                 font-size: 30px;
             }
 
-            .course-card-header {
-                padding: 25px 22px;
-            }
-
-            .course-card-header h3 {
-                font-size: 24px;
-            }
-
-            .course-meta {
-                padding: 18px 22px;
-            }
-
-            .details-toggle {
-                width: calc(100% - 44px);
-                margin-left: 22px;
-                margin-right: 22px;
-            }
-
-            .course-details {
+            .course-content {
                 padding: 22px;
             }
 
-            .document-item {
-                flex-direction: column;
-                align-items: flex-start;
+            .course-content h2 {
+                font-size: 23px;
             }
-
-            .document-btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-        }
-
-        @media (max-width: 480px) {
 
             .course-meta {
                 grid-template-columns: 1fr;
             }
 
-            .page-banner h1 {
-                font-size: 29px;
+            .course-action-row {
+                grid-template-columns: 1fr;
             }
 
-            .course-intro h2 {
-                font-size: 27px;
+            .document-link {
+                align-items: flex-start;
             }
-
         }
 
     </style>
@@ -486,267 +593,290 @@
 
 <body>
 
+    <!-- =========================================================
+         TOP BAR
+    ========================================================= -->
 
-<!-- =========================================================
-     TOP BAR
-========================================================= -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
 
-<div class="top-bar">
-    <div class="container top-bar-content">
-
-        <div class="top-info">
-
-            <span>
-                <i class="fas fa-phone-alt"></i>
-                +91 8839939678
-            </span>
-
-            <span>
-                <i class="fas fa-envelope"></i>
-                pts.pass2020@gmail.com
-            </span>
-
-        </div>
-
-        <div class="top-socials">
-
-            <a href="#" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-
-            <a href="#" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-            </a>
-
-        </div>
-
-    </div>
-</div>
-
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
-
-<header class="main-header">
-
-    <div class="container nav-container">
-
-        <a href="index.html"
-           class="logo-area"
-           style="display:flex;align-items:center;gap:15px;text-decoration:none;">
-
-            <img src="images/logo.png"
-                 alt="PASS Logo"
-                 class="logo-img"
-                 style="height:55px;width:auto;display:block;">
-
-            <div class="logo-text"
-                 style="display:flex;flex-direction:column;">
-
-                <span class="brand-title"
-                      style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1a365d;line-height:1.1;">
-                    PASS
+            <div class="top-info">
+                <span>
+                    <i class="fas fa-phone-alt"></i>
+                    +91 8839939678
                 </span>
 
-                <span class="brand-subtitle"
-                      style="font-family:'Inter',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#718096;font-weight:600;">
-                    Theological Seminary
+                <span>
+                    <i class="fas fa-envelope"></i>
+                    pts.pass2020@gmail.com
                 </span>
-
             </div>
 
-        </a>
+            <div class="top-socials">
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
 
+                <a href="#" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
 
-        <button class="menu-toggle"
-                aria-label="Toggle navigation">
-
-            <i class="fas fa-bars"></i>
-
-        </button>
-
-
-        <nav class="nav-menu">
-
-            <ul>
-
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-
-                <li>
-                    <a href="courses.html" class="active">Courses</a>
-                </li>
-
-                <li>
-                    <a href="admission.html">Admission</a>
-                </li>
-
-                <li>
-                    <a href="gallery.html">Gallery</a>
-                </li>
-
-                <li>
-                    <a href="downloads.html">Downloads</a>
-                </li>
-
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-
-            </ul>
-
-        </nav>
-
+        </div>
     </div>
 
-</header>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header class="main-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html"
+               class="logo-area"
+               style="display:flex;align-items:center;gap:15px;text-decoration:none;">
+
+                <img src="images/logo.png"
+                     alt="PASS Logo"
+                     class="logo-img"
+                     style="height:55px;width:auto;display:block;">
+
+                <div class="logo-text"
+                     style="display:flex;flex-direction:column;">
+
+                    <span class="brand-title"
+                          style="font-family:'Playfair Display',serif;
+                                 font-size:24px;
+                                 font-weight:700;
+                                 color:#1a365d;
+                                 line-height:1.1;">
+                        PASS
+                    </span>
+
+                    <span class="brand-subtitle"
+                          style="font-family:'Inter',sans-serif;
+                                 font-size:12px;
+                                 text-transform:uppercase;
+                                 letter-spacing:1px;
+                                 color:#718096;
+                                 font-weight:600;">
+                        Theological Seminary
+                    </span>
+
+                </div>
+            </a>
 
 
-<!-- =========================================================
-     PAGE BANNER
-========================================================= -->
+            <button class="menu-toggle"
+                    aria-label="Toggle navigation">
 
-<section class="page-banner">
+                <i class="fas fa-bars"></i>
 
-    <div class="page-banner-overlay"></div>
-
-    <div class="container page-banner-content"
-         data-aos="fade-up">
-
-        <h1>Our Academic Programs</h1>
-
-        <p>
-            Biblical education, theological formation and practical ministry preparation.
-        </p>
-
-    </div>
-
-</section>
+            </button>
 
 
-<!-- =========================================================
-     COURSES
-========================================================= -->
+            <nav class="nav-menu">
 
-<section class="courses-section">
+                <ul>
 
-    <div class="container">
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html" class="active">
+                            Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admission.html">
+                            Admission
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="gallery.html">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
 
 
-        <div class="course-intro"
+    <!-- =========================================================
+         BANNER
+    ========================================================= -->
+
+    <section class="courses-banner">
+
+        <div class="courses-banner-content"
              data-aos="fade-up">
 
-            <h2>Choose Your Course</h2>
+            <h1>Our Courses</h1>
 
             <p>
-                Explore our theological programs and discover the course
-                designed to equip you for faithful Christian service,
-                ministry and theological leadership.
+                Explore our theological programs and discover your calling.
             </p>
 
         </div>
 
+    </section>
 
-        <div class="courses-grid">
+
+    <!-- =========================================================
+         INTRO
+    ========================================================= -->
+
+    <section class="courses-intro"
+             data-aos="fade-up">
+
+        <h2>
+            Academic Programs
+        </h2>
+
+        <p>
+            PASS Theological Seminary provides structured theological
+            education designed to equip students for faithful Christian
+            ministry, biblical teaching, pastoral leadership and theological
+            service.
+        </p>
+
+    </section>
 
 
-            <!-- =================================================
+    <!-- =========================================================
+         COURSE CONTENT
+    ========================================================= -->
+
+    <main class="course-page-wrapper">
+
+        <div class="course-grid">
+
+
+            <!-- =====================================================
                  C.TH.
-            ================================================== -->
+            ====================================================== -->
 
-            <article class="course-card"
-                     data-aos="fade-up"
-                     data-aos-delay="50">
+            <article class="course-box"
+                     data-aos="fade-up">
 
-                <div class="course-card-header">
+                <div class="course-image">
 
-                    <span class="course-badge">
+                    <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1200&q=85"
+                         alt="Christian Theology">
+
+                    <div class="course-image-overlay"></div>
+
+                    <div class="course-code">
+                        <i class="fas fa-cross"></i>
+                        C.Th.
+                    </div>
+
+                </div>
+
+
+                <div class="course-content">
+
+                    <span class="course-status">
                         Certificate Program
                     </span>
 
-                    <h3>
+                    <h2>
                         Certificate in Theology (C.Th.)
-                    </h3>
+                    </h2>
 
-                    <p>
-                        An accessible introductory theological program
-                        designed for believers, Sunday school teachers
-                        and marketplace professionals.
-                    </p>
-
-                </div>
-
-
-                <div class="course-meta">
-
-                    <div class="meta-item">
-                        <i class="far fa-clock"></i>
-                        1 Academic Year
-                    </div>
-
-                    <div class="meta-item">
-                        <i class="fas fa-book"></i>
-                        Part-Time / Weekend
-                    </div>
-
-                </div>
-
-
-                <button class="details-toggle"
-                        onclick="toggleDetails(this)">
-
-                    <span>
-                        View Course Details
-                    </span>
-
-                    <i class="fas fa-chevron-down"></i>
-
-                </button>
-
-
-                <div class="course-details">
-
-                    <h4>
-                        Program Overview
-                    </h4>
-
-                    <p>
-                        The Certificate in Theology (C.Th.) is an
-                        introductory program designed to build solid
-                        theological understanding alongside regular
-                        vocational and ministry responsibilities.
+                    <p class="course-description">
+                        A foundational theological program designed for
+                        students and Christian workers seeking structured
+                        biblical and theological education.
                     </p>
 
 
-                    <h4>
-                        Core Curriculum
-                    </h4>
+                    <div class="course-meta">
 
-                    <ul class="curriculum-list">
+                        <div class="course-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible</span>
+                        </div>
 
-                        <li>
-                            How We Got the Bible: Canonization & Authority
-                        </li>
+                        <div class="course-meta-item">
+                            <i class="fas fa-book-open"></i>
+                            <span>Theology & Ministry</span>
+                        </div>
 
-                        <li>
-                            Summary Analysis of the Old and New Testaments
-                        </li>
+                    </div>
 
-                        <li>
-                            Core Tenets of the Christian Faith
-                        </li>
 
-                        <li>
-                            Workplace Ministry & Marketplace Witness Integration
-                        </li>
+                    <button class="details-toggle"
+                            type="button"
+                            onclick="toggleDetails(this)">
 
-                    </ul>
+                        <span>
+                            View Course Details
+                        </span>
+
+                        <i class="fas fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="course-details">
+
+                        <h3>
+                            Course Overview
+                        </h3>
+
+                        <p>
+                            The C.Th. program provides foundational
+                            theological knowledge for Christian service,
+                            Bible study and ministry development.
+                        </p>
+
+
+                        <!-- ONLY APPLICATION FORM FOR C.TH. -->
+
+                        <h3 class="documents-title">
+                            Course Resources
+                        </h3>
+
+                        <div class="document-list">
+
+                            <a class="application-link"
+                               href="downloads/Application_Form.pdf"
+                               download="Application_Form.pdf">
+
+                                <i class="fas fa-download"></i>
+
+                                PTS Application Form
+
+                            </a>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -754,97 +884,108 @@
 
 
 
-            <!-- =================================================
+            <!-- =====================================================
                  D.TH.
-            ================================================== -->
+            ====================================================== -->
 
-            <article class="course-card"
+            <article class="course-box"
                      data-aos="fade-up"
                      data-aos-delay="100">
 
-                <div class="course-card-header">
+                <div class="course-image">
 
-                    <span class="course-badge">
-                        Diploma Program
-                    </span>
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=85"
+                         alt="Doctor of Theology">
 
-                    <h3>
-                        Diploma in Theology (D.Th.)
-                    </h3>
+                    <div class="course-image-overlay"></div>
 
-                    <p>
-                        A practical theological program for church
-                        workers, evangelists, youth leaders and
-                        marketplace ministries.
-                    </p>
-
-                </div>
-
-
-                <div class="course-meta">
-
-                    <div class="meta-item">
-                        <i class="far fa-clock"></i>
-                        2 Academic Years
-                    </div>
-
-                    <div class="meta-item">
-                        <i class="fas fa-book"></i>
-                        Full-Time / Modular
+                    <div class="course-code">
+                        <i class="fas fa-cross"></i>
+                        D.Th.
                     </div>
 
                 </div>
 
 
-                <button class="details-toggle"
-                        onclick="toggleDetails(this)">
+                <div class="course-content">
 
-                    <span>
-                        View Course Details
+                    <span class="course-status">
+                        Advanced Program
                     </span>
 
-                    <i class="fas fa-chevron-down"></i>
+                    <h2>
+                        Doctor of Theology (D.Th.)
+                    </h2>
 
-                </button>
-
-
-                <div class="course-details">
-
-                    <h4>
-                        Program Overview
-                    </h4>
-
-                    <p>
-                        The Diploma in Theology (D.Th.) provides a
-                        streamlined but thorough biblical education
-                        focused on practical ministry and direct
-                        leadership deployment.
+                    <p class="course-description">
+                        An advanced theological pathway designed for
+                        deeper theological study, Christian scholarship,
+                        teaching and ministry leadership.
                     </p>
 
 
-                    <h4>
-                        Core Curriculum
-                    </h4>
+                    <div class="course-meta">
 
-                    <ul class="curriculum-list">
+                        <div class="course-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Advanced Study</span>
+                        </div>
 
-                        <li>
-                            Comprehensive Old & New Testament Overviews
-                        </li>
+                        <div class="course-meta-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Advanced Theology</span>
+                        </div>
 
-                        <li>
-                            Basic Christian Doctrine & Faith Fundamentals
-                        </li>
+                    </div>
 
-                        <li>
-                            Methods of Personal Evangelism & Discipleship
-                        </li>
 
-                        <li>
-                            Children and Youth Ministry & Church Administration
-                        </li>
+                    <button class="details-toggle"
+                            type="button"
+                            onclick="toggleDetails(this)">
 
-                    </ul>
+                        <span>
+                            View Course Details
+                        </span>
+
+                        <i class="fas fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="course-details">
+
+                        <h3>
+                            Course Overview
+                        </h3>
+
+                        <p>
+                            The D.Th. program is intended for advanced
+                            theological study and preparation for teaching,
+                            research and Christian leadership.
+                        </p>
+
+
+                        <!-- ONLY APPLICATION FORM FOR D.TH. -->
+
+                        <h3 class="documents-title">
+                            Course Resources
+                        </h3>
+
+                        <div class="document-list">
+
+                            <a class="application-link"
+                               href="downloads/Application_Form.pdf"
+                               download="Application_Form.pdf">
+
+                                <i class="fas fa-download"></i>
+
+                                PTS Application Form
+
+                            </a>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -852,274 +993,259 @@
 
 
 
-            <!-- =================================================
+            <!-- =====================================================
                  B.TH.
-            ================================================== -->
+            ====================================================== -->
 
-            <article class="course-card"
-                     data-aos="fade-up"
-                     data-aos-delay="150">
+            <article class="course-box"
+                     data-aos="fade-up">
 
-                <div class="course-card-header">
+                <div class="course-image">
 
-                    <span class="course-badge">
-                        Undergraduate Degree
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85"
+                         alt="Bachelor of Theology">
+
+                    <div class="course-image-overlay"></div>
+
+                    <div class="course-code">
+                        <i class="fas fa-cross"></i>
+                        B.Th.
+                    </div>
+
+                </div>
+
+
+                <div class="course-content">
+
+                    <span class="course-status">
+                        Undergraduate
                     </span>
 
-                    <h3>
+                    <h2>
                         Bachelor of Theology (B.Th.)
-                    </h3>
+                    </h2>
 
-                    <p>
+                    <p class="course-description">
                         A comprehensive undergraduate program providing
                         foundational knowledge in Biblical Studies,
                         Systematic Theology, Church History and Practical
                         Ministry.
                     </p>
 
-                </div>
 
+                    <div class="course-meta">
 
-                <div class="course-meta">
+                        <div class="course-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>3 Years</span>
+                        </div>
 
-                    <div class="meta-item">
-                        <i class="far fa-clock"></i>
-                        3 Years
+                        <div class="course-meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>Full-Time / Blended</span>
+                        </div>
+
                     </div>
 
-                    <div class="meta-item">
-                        <i class="fas fa-book"></i>
-                        Full-Time / Blended
-                    </div>
 
-                </div>
+                    <button class="details-toggle"
+                            type="button"
+                            onclick="toggleDetails(this)">
 
+                        <span>
+                            View Course Details
+                        </span>
 
-                <button class="details-toggle"
-                        onclick="toggleDetails(this)">
+                        <i class="fas fa-chevron-down"></i>
 
-                    <span>
-                        View Course Details
-                    </span>
-
-                    <i class="fas fa-chevron-down"></i>
-
-                </button>
+                    </button>
 
 
-                <div class="course-details">
+                    <div class="course-details">
 
-                    <h4>
-                        Program Overview
-                    </h4>
+                        <h3>
+                            Core Curriculum
+                        </h3>
 
-                    <p>
-                        The Bachelor of Theology (B.Th.) provides an
-                        extensive undergraduate foundation in biblical
-                        analysis, historical doctrine and practical
-                        ministry leadership.
-                    </p>
+                        <ul class="curriculum-list">
 
+                            <li>
+                                Old Testament Survey & Pentateuchal Studies
+                            </li>
 
-                    <h4>
-                        Core Curriculum
-                    </h4>
+                            <li>
+                                New Testament Survey & Gospels Architecture
+                            </li>
 
-                    <ul class="curriculum-list">
+                            <li>
+                                Introduction to Systematic Theology I & II
+                            </li>
 
-                        <li>
-                            Old Testament Survey & Pentateuchal Studies
-                        </li>
+                            <li>
+                                Spiritual Disciplines & Character Formation
+                            </li>
 
-                        <li>
-                            New Testament Survey & Gospels Architecture
-                        </li>
+                            <li>
+                                Introduction to Biblical Greek
+                            </li>
 
-                        <li>
-                            Introduction to Systematic Theology I & II
-                        </li>
+                            <li>
+                                Systematic Theology III
+                            </li>
 
-                        <li>
-                            Spiritual Disciplines & Character Formation
-                        </li>
+                            <li>
+                                General Pastoral Care & Counseling
+                            </li>
 
-                        <li>
-                            Introduction to Biblical Greek
-                        </li>
+                            <li>
+                                Cross-Cultural Missions & Church Planting
+                            </li>
 
-                        <li>
-                            Systematic Theology III
-                        </li>
+                            <li>
+                                Senior Theological Research Thesis
+                                (10,000 words)
+                            </li>
 
-                        <li>
-                            General Pastoral Care & Counseling
-                        </li>
+                            <li>
+                                Supervised Field Ministry Practicum
+                            </li>
 
-                        <li>
-                            Cross-Cultural Missions & Church Planting
-                        </li>
-
-                        <li>
-                            Senior Theological Research Thesis
-                        </li>
-
-                        <li>
-                            Supervised Field Ministry Practicum
-                        </li>
-
-                    </ul>
+                        </ul>
 
 
-                    <!-- B.TH DOCUMENTS -->
+                        <!-- =================================================
+                             B.TH. DOCUMENTS
+                        ================================================== -->
 
-                    <div class="document-section">
-
-                        <h4>
-                            <i class="fas fa-file-pdf"></i>
-                            B.Th. Admission Documents
-                        </h4>
-
+                        <h3 class="documents-title">
+                            B.Th. Course Documents
+                        </h3>
 
                         <div class="document-list">
 
 
-                            <!-- English Recommendation -->
+                            <!-- BTh Recommendation English -->
 
-                            <div class="document-item">
+                            <a class="document-link"
+                               href="downloads/RECOMMENDATION%20LETTER%20For%20BTh.pdf"
+                               download="RECOMMENDATION LETTER For BTh.pdf">
 
-                                <div class="document-name">
+                                <i class="fas fa-file-pdf pdf-icon"></i>
 
-                                    <i class="fas fa-file-pdf"></i>
+                                <span>
+                                    Recommendation Letter – English
+                                </span>
 
-                                    <span>
-                                        Recommendation Letter – English
-                                    </span>
+                                <i class="fas fa-download download-icon"></i>
 
-                                </div>
-
-                                <a href="downloads/RECOMMENDATION%20LETTER%20For%20BTh.pdf"
-                                   class="document-btn"
-                                   download="RECOMMENDATION LETTER For BTh.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
+                            </a>
 
 
-                            <!-- Hindi Recommendation -->
+                            <!-- BTh Recommendation Hindi -->
 
-                            <div class="document-item">
+                            <a class="document-link"
+                               href="downloads/अनुशंसा पत्र BTh.pdf"
+                               download="अनुशंसा पत्र BTh.pdf">
 
-                                <div class="document-name">
+                                <i class="fas fa-file-pdf pdf-icon"></i>
 
-                                    <i class="fas fa-file-pdf"></i>
+                                <span>
+                                    अनुशंसा पत्र – Hindi
+                                </span>
 
-                                    <span>
-                                        अनुशंसा पत्र – Hindi
-                                    </span>
+                                <i class="fas fa-download download-icon"></i>
 
-                                </div>
-
-                                <a href="downloads/%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B6%E0%A4%82%E0%A4%B6%E0%A4%BE%20%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0%20BTh.pdf"
-                                   class="document-btn"
-                                   download="अनुशंसा पत्र BTh.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
+                            </a>
 
 
-                            <!-- English Declaration -->
+                            <!-- BTh Consent English -->
 
-                            <div class="document-item">
+                            <a class="document-link"
+                               href="downloads/PASS%20Theological%20Seminary%20Consent%20Letter%20for%20BTh.pdf"
+                               download="PASS Theological Seminary Consent Letter for BTh.pdf">
 
-                                <div class="document-name">
+                                <i class="fas fa-file-pdf pdf-icon"></i>
 
-                                    <i class="fas fa-file-pdf"></i>
+                                <span>
+                                    Voluntary Declaration & Consent – English
+                                </span>
 
-                                    <span>
-                                        Voluntary Declaration – English
-                                    </span>
+                                <i class="fas fa-download download-icon"></i>
 
-                                </div>
-
-                                <a href="downloads/PASS%20Theological%20Seminary%20Consent%20Letter%20for%20BTh.pdf"
-                                   class="document-btn"
-                                   download="PASS Theological Seminary Consent Letter for BTh.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
+                            </a>
 
 
-                            <!-- Hindi Declaration -->
+                            <!-- BTh Declaration Hindi -->
 
-                            <div class="document-item">
+                            <a class="document-link"
+                               href="downloads/घोषणा पत्र for BTh.pdf"
+                               download="घोषणा पत्र for BTh.pdf">
 
-                                <div class="document-name">
+                                <i class="fas fa-file-pdf pdf-icon"></i>
 
-                                    <i class="fas fa-file-pdf"></i>
+                                <span>
+                                    घोषणा पत्र – Hindi
+                                </span>
 
-                                    <span>
-                                        स्वैच्छिक घोषणा एवं सहमति-पत्र – Hindi
-                                    </span>
+                                <i class="fas fa-download download-icon"></i>
 
-                                </div>
-
-                                <a href="downloads/%E0%A4%98%E0%A5%8B%E0%A4%B7%E0%A4%A3%E0%A4%BE%20%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0%20for%20BTh.pdf"
-                                   class="document-btn"
-                                   download="घोषणा पत्र for BTh.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
-
-
-                            <!-- COMMON APPLICATION -->
-
-                            <div class="document-item common-form">
-
-                                <div class="document-name">
-
-                                    <i class="fas fa-file-signature"></i>
-
-                                    <span>
-                                        PTS Application Form – Common
-                                    </span>
-
-                                </div>
-
-                                <a href="downloads/Application_Form.pdf"
-                                   class="document-btn"
-                                   download="Application_Form.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
+                            </a>
 
 
                         </div>
 
 
-                        <p class="common-note">
-                            The PTS Application Form is the common admission
-                            application form for the available courses.
-                        </p>
+                        <!-- =================================================
+                             COMMON DOCUMENTS
+                        ================================================== -->
+
+                        <div class="common-application">
+
+                            <div class="common-application-title">
+
+                                <i class="fas fa-file-signature"></i>
+
+                                Common PTS Application Form
+
+                            </div>
+
+                            <p>
+                                This application form is common for all
+                                PASS Theological Seminary courses.
+                            </p>
+
+                            <a class="application-link"
+                               href="downloads/Application_Form.pdf"
+                               download="Application_Form.pdf">
+
+                                <i class="fas fa-download"></i>
+
+                                Download Application Form
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- PROSPECTUS -->
+
+                        <div style="margin-top:10px;">
+
+                            <a class="document-link"
+                               href="downloads/prospectus.pdf"
+                               download="prospectus.pdf">
+
+                                <i class="fas fa-file-pdf pdf-icon"></i>
+
+                                <span>
+                                    Seminary Information Prospectus
+                                </span>
+
+                                <i class="fas fa-download download-icon"></i>
+
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -1129,262 +1255,256 @@
 
 
 
-            <!-- =================================================
+            <!-- =====================================================
                  M.DIV.
-            ================================================== -->
+            ====================================================== -->
 
-            <article class="course-card"
+            <article class="course-box"
                      data-aos="fade-up"
-                     data-aos-delay="200">
+                     data-aos-delay="100">
 
-                <div class="course-card-header">
+                <div class="course-image">
 
-                    <span class="course-badge">
-                        Postgraduate Degree
+                    <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1200&q=85"
+                         alt="Master of Divinity">
+
+                    <div class="course-image-overlay"></div>
+
+                    <div class="course-code">
+                        <i class="fas fa-cross"></i>
+                        M.Div.
+                    </div>
+
+                </div>
+
+
+                <div class="course-content">
+
+                    <span class="course-status">
+                        Postgraduate
                     </span>
 
-                    <h3>
+                    <h2>
                         Master of Divinity (M.Div.)
-                    </h3>
+                    </h2>
 
-                    <p>
+                    <p class="course-description">
                         Designed to equip leaders for professional Christian
-                        ministry with advanced biblical studies, theological
-                        training and pastoral leadership development.
-                    </p>
-
-                </div>
-
-
-                <div class="course-meta">
-
-                    <div class="meta-item">
-                        <i class="far fa-clock"></i>
-                        2 – 3 Years
-                    </div>
-
-                    <div class="meta-item">
-                        <i class="fas fa-book"></i>
-                        Full-Time / Modular
-                    </div>
-
-                </div>
-
-
-                <button class="details-toggle"
-                        onclick="toggleDetails(this)">
-
-                    <span>
-                        View Course Details
-                    </span>
-
-                    <i class="fas fa-chevron-down"></i>
-
-                </button>
-
-
-                <div class="course-details">
-
-                    <h4>
-                        Program Overview
-                    </h4>
-
-                    <p>
-                        The Master of Divinity (M.Div.) is designed for
-                        professional pastoral leadership, chaplaincy and
-                        advanced Christian teaching ministries. The program
-                        provides deeper theological study, biblical language
-                        training and ministry development.
+                        ministry, focusing on biblical studies, theology,
+                        ministry leadership and pastoral preparation.
                     </p>
 
 
-                    <h4>
-                        Core Curriculum
-                    </h4>
+                    <div class="course-meta">
 
-                    <ul class="curriculum-list">
+                        <div class="course-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>2 – 3 Years</span>
+                        </div>
 
-                        <li>
-                            Advanced Biblical Hebrew & Greek Exegesis
-                        </li>
+                        <div class="course-meta-item">
+                            <i class="fas fa-book"></i>
+                            <span>Full-Time / Modular</span>
+                        </div>
 
-                        <li>
-                            Advanced Hermeneutics & Contemporary Theological Methods
-                        </li>
-
-                        <li>
-                            Exegetical Studies in the Prophets & Pauline Epistles
-                        </li>
-
-                        <li>
-                            Apologetics & Applied Christian Ethics
-                        </li>
-
-                        <li>
-                            Pastoral Leadership & Ministry Development
-                        </li>
-
-                        <li>
-                            Advanced Biblical & Theological Research
-                        </li>
-
-                        <li>
-                            Master's Graduate Defense Paper
-                        </li>
-
-                    </ul>
+                    </div>
 
 
-                    <!-- M.DIV DOCUMENTS -->
+                    <button class="details-toggle"
+                            type="button"
+                            onclick="toggleDetails(this)">
 
-                    <div class="document-section">
+                        <span>
+                            View Course Details
+                        </span>
 
-                        <h4>
-                            <i class="fas fa-file-pdf"></i>
-                            M.Div. Admission Documents
-                        </h4>
+                        <i class="fas fa-chevron-down"></i>
 
+                    </button>
+
+
+                    <div class="course-details">
+
+                        <h3>
+                            Core Curriculum
+                        </h3>
+
+                        <ul class="curriculum-list">
+
+                            <li>
+                                Advanced Biblical Studies
+                            </li>
+
+                            <li>
+                                Old Testament Studies
+                            </li>
+
+                            <li>
+                                New Testament Studies
+                            </li>
+
+                            <li>
+                                Advanced Systematic Theology
+                            </li>
+
+                            <li>
+                                Biblical Hermeneutics
+                            </li>
+
+                            <li>
+                                Christian Ministry & Leadership
+                            </li>
+
+                            <li>
+                                Pastoral Care & Counseling
+                            </li>
+
+                            <li>
+                                Missions & Church Planting
+                            </li>
+
+                            <li>
+                                Theological Research
+                            </li>
+
+                            <li>
+                                Supervised Ministry Practicum
+                            </li>
+
+                        </ul>
+
+
+                        <!-- =================================================
+                             M.DIV DOCUMENTS
+                        ================================================== -->
+
+                        <h3 class="documents-title">
+                            M.Div. Course Documents
+                        </h3>
 
                         <div class="document-list">
 
 
-                            <!-- English Recommendation -->
+                            <!-- MDiv Recommendation English -->
 
-                            <div class="document-item">
+                            <a class="document-link"
+                               href="downloads/Letter%20of%20Recommendation%20M.Div.pdf"
+                               download="Letter of Recommendation M.Div.pdf">
 
-                                <div class="document-name">
+                                <i class="fas fa-file-pdf pdf-icon"></i>
 
-                                    <i class="fas fa-file-pdf"></i>
+                                <span>
+                                    Recommendation Letter – English
+                                </span>
 
-                                    <span>
-                                        Recommendation Letter – English
-                                    </span>
+                                <i class="fas fa-download download-icon"></i>
 
-                                </div>
-
-                                <a href="downloads/Letter%20of%20Recommendation%20M.Div.pdf"
-                                   class="document-btn"
-                                   download="Letter of Recommendation M.Div.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
+                            </a>
 
 
-                            <!-- Hindi Recommendation -->
+                            <!-- MDiv Recommendation Hindi -->
 
-                            <div class="document-item">
+                            <a class="document-link"
+                               href="downloads/अनुशंसा पत्र M.Div.pdf"
+                               download="अनुशंसा पत्र M.Div.pdf">
 
-                                <div class="document-name">
+                                <i class="fas fa-file-pdf pdf-icon"></i>
 
-                                    <i class="fas fa-file-pdf"></i>
+                                <span>
+                                    अनुशंसा पत्र – Hindi
+                                </span>
 
-                                    <span>
-                                        अनुशंसा पत्र – Hindi
-                                    </span>
+                                <i class="fas fa-download download-icon"></i>
 
-                                </div>
-
-                                <a href="downloads/%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B6%E0%A4%82%E0%A4%B8%E0%A4%BE%20%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0%20M.Div.pdf"
-                                   class="document-btn"
-                                   download="अनुशंसा पत्र M.Div.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
+                            </a>
 
 
-                            <!-- English Declaration -->
+                            <!-- MDiv Consent English -->
 
-                            <div class="document-item">
+                            <a class="document-link"
+                               href="downloads/Student%20Voluntary%20Declaration%20%26%20Consent%20Letter%20MDiv.pdf"
+                               download="Student Voluntary Declaration & Consent Letter MDiv.pdf">
 
-                                <div class="document-name">
+                                <i class="fas fa-file-pdf pdf-icon"></i>
 
-                                    <i class="fas fa-file-pdf"></i>
+                                <span>
+                                    Voluntary Declaration & Consent – English
+                                </span>
 
-                                    <span>
-                                        Voluntary Declaration – English
-                                    </span>
+                                <i class="fas fa-download download-icon"></i>
 
-                                </div>
-
-                                <a href="downloads/Student%20Voluntary%20Declaration%20%26%20Consent%20Letter%20MDiv.pdf"
-                                   class="document-btn"
-                                   download="Student Voluntary Declaration & Consent Letter MDiv.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
+                            </a>
 
 
-                            <!-- Hindi Declaration -->
+                            <!-- MDiv Declaration Hindi -->
 
-                            <div class="document-item">
+                            <a class="document-link"
+                               href="downloads/घोषणा पत्र for MDiv.pdf"
+                               download="घोषणा पत्र for MDiv.pdf">
 
-                                <div class="document-name">
+                                <i class="fas fa-file-pdf pdf-icon"></i>
 
-                                    <i class="fas fa-file-pdf"></i>
+                                <span>
+                                    घोषणा पत्र – Hindi
+                                </span>
 
-                                    <span>
-                                        स्वैच्छिक घोषणा एवं सहमति-पत्र – Hindi
-                                    </span>
+                                <i class="fas fa-download download-icon"></i>
 
-                                </div>
-
-                                <a href="downloads/%E0%A4%98%E0%A5%8B%E0%A4%B7%E0%A4%A3%E0%A4%BE%20%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0%20for%20MDiv.pdf"
-                                   class="document-btn"
-                                   download="घोषणा पत्र for MDiv.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
-
-
-                            <!-- COMMON APPLICATION -->
-
-                            <div class="document-item common-form">
-
-                                <div class="document-name">
-
-                                    <i class="fas fa-file-signature"></i>
-
-                                    <span>
-                                        PTS Application Form – Common
-                                    </span>
-
-                                </div>
-
-                                <a href="downloads/Application_Form.pdf"
-                                   class="document-btn"
-                                   download="Application_Form.pdf">
-
-                                    <i class="fas fa-download"></i>
-                                    Download
-
-                                </a>
-
-                            </div>
+                            </a>
 
 
                         </div>
 
 
-                        <p class="common-note">
-                            The PTS Application Form is the common admission
-                            application form for the available courses.
-                        </p>
+                        <!-- COMMON APPLICATION -->
+
+                        <div class="common-application">
+
+                            <div class="common-application-title">
+
+                                <i class="fas fa-file-signature"></i>
+
+                                Common PTS Application Form
+
+                            </div>
+
+                            <p>
+                                This application form is common for all
+                                PASS Theological Seminary courses.
+                            </p>
+
+                            <a class="application-link"
+                               href="downloads/Application_Form.pdf"
+                               download="Application_Form.pdf">
+
+                                <i class="fas fa-download"></i>
+
+                                Download Application Form
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- PROSPECTUS -->
+
+                        <div style="margin-top:10px;">
+
+                            <a class="document-link"
+                               href="downloads/prospectus.pdf"
+                               download="prospectus.pdf">
+
+                                <i class="fas fa-file-pdf pdf-icon"></i>
+
+                                <span>
+                                    Seminary Information Prospectus
+                                </span>
+
+                                <i class="fas fa-download download-icon"></i>
+
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -1395,224 +1515,215 @@
 
         </div>
 
-
-        <!-- =====================================================
-             NOTE
-        ====================================================== -->
-
-        <div class="course-note"
-             data-aos="fade-up">
-
-            <h3>
-                Need Help Choosing a Program?
-            </h3>
-
-            <p>
-                If you are unsure which program is suitable for your
-                academic background or ministry calling, please contact
-                the PASS Theological Seminary administration for guidance.
-            </p>
-
-        </div>
+    </main>
 
 
-    </div>
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
 
-</section>
+    <footer class="main-footer">
 
+        <div class="container footer-grid">
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+            <div class="footer-info">
 
-<footer class="main-footer">
+                <div class="logo-area light"
+                     style="display:flex;
+                            align-items:center;
+                            gap:15px;
+                            text-decoration:none;">
 
-    <div class="container footer-grid">
+                    <img src="images/logo.png"
+                         alt="PASS Logo"
+                         class="logo-img"
+                         style="height:55px;
+                                width:auto;
+                                display:block;
+                                border-radius:4px;">
 
+                    <div class="logo-text"
+                         style="display:flex;
+                                flex-direction:column;
+                                text-align:left;">
 
-        <div class="footer-info">
+                        <span class="brand-title"
+                              style="font-family:'Playfair Display',serif;
+                                     font-size:22px;
+                                     font-weight:700;
+                                     color:#ffffff;
+                                     line-height:1.1;">
+                            PASS
+                        </span>
 
-            <div class="logo-area light"
-                 style="display:flex;align-items:center;gap:15px;text-decoration:none;">
+                        <span class="brand-subtitle"
+                              style="font-family:'Inter',sans-serif;
+                                     font-size:11px;
+                                     text-transform:uppercase;
+                                     letter-spacing:1px;
+                                     color:#a0aec0;">
+                            Theological Seminary
+                        </span>
 
-                <img src="images/logo.png"
-                     alt="PASS Logo"
-                     class="logo-img"
-                     style="height:55px;width:auto;display:block;border-radius:4px;">
-
-                <div class="logo-text"
-                     style="display:flex;flex-direction:column;text-align:left;">
-
-                    <span class="brand-title"
-                          style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#ffffff;line-height:1.1;">
-                        PASS
-                    </span>
-
-                    <span class="brand-subtitle"
-                          style="font-family:'Inter',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#a0aec0;">
-                        Theological Seminary
-                    </span>
+                    </div>
 
                 </div>
+
+                <p style="margin-top:20px;">
+                    Equipping faithful servants for gospel ministry,
+                    cross-cultural missions, and theological leadership.
+                </p>
 
             </div>
 
 
-            <p style="margin-top:20px;">
-                Equipping faithful servants for gospel ministry,
-                cross-cultural missions and theological leadership.
-            </p>
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html">
+                            Our Programs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admission.html">
+                            Admissions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="gallery.html">
+                            Campus Gallery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    Contact Info
+                </h3>
+
+                <p>
+                    <i class="fas fa-phone-alt"></i>
+                    +91 8839939678
+                </p>
+
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    pts.pass2020@gmail.com
+                </p>
+
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    PASS Theological Seminary
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="footer-links">
-
-            <h3>
-                Quick Links
-            </h3>
-
-            <ul>
-
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-
-                <li>
-                    <a href="courses.html">Our Programs</a>
-                </li>
-
-                <li>
-                    <a href="admission.html">Admissions</a>
-                </li>
-
-                <li>
-                    <a href="gallery.html">Campus Gallery</a>
-                </li>
-
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="footer-contact">
-
-            <h3>
-                Contact Info
-            </h3>
+        <div class="footer-bottom text-center">
 
             <p>
-                <i class="fas fa-phone-alt"></i>
-                +91 8839939678
-            </p>
-
-            <p>
-                <i class="fas fa-envelope"></i>
-                pts.pass2020@gmail.com
-            </p>
-
-            <p>
-                <i class="fas fa-map-marker-alt"></i>
-                Chhindwara, Madhya Pradesh
+                &copy; 2026 PASS Theological Seminary.
+                All Rights Reserved.
             </p>
 
         </div>
 
-
-    </div>
-
-
-    <div class="footer-bottom text-center">
-
-        <p>
-            &copy; 2026 PASS Theological Seminary.
-            All Rights Reserved.
-        </p>
-
-    </div>
-
-</footer>
+    </footer>
 
 
-<!-- =========================================================
-     AOS
-========================================================= -->
+    <!-- =========================================================
+         AOS
+    ========================================================= -->
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-
-<script>
-
-    AOS.init({
-        once: true,
-        duration: 700
-    });
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
-    /* =========================================================
-       COURSE DETAILS TOGGLE
-    ========================================================= */
+    <!-- =========================================================
+         COURSE DETAILS JAVASCRIPT
+    ========================================================= -->
 
-    function toggleDetails(button) {
+    <script>
 
-        const details =
-            button.nextElementSibling;
+        AOS.init({
+            once: true,
+            duration: 700
+        });
 
-        const isOpen =
-            details.classList.contains("show");
+
+        function toggleDetails(button) {
+
+            const details =
+                button.nextElementSibling;
+
+            const isOpen =
+                details.classList.contains("show");
 
 
-        /* Close all other course details */
+            /* Close all other course details */
 
-        document
-            .querySelectorAll(".course-details.show")
-            .forEach(function(item) {
-
-                if (item !== details) {
+            document
+                .querySelectorAll(".course-details")
+                .forEach(function(item) {
 
                     item.classList.remove("show");
 
-                    const otherButton =
-                        item.previousElementSibling;
-
-                    if (otherButton) {
-                        otherButton.classList.remove("open");
-                    }
-
-                }
-
-            });
+                });
 
 
-        /* Toggle selected course */
+            document
+                .querySelectorAll(".details-toggle")
+                .forEach(function(item) {
 
-        if (isOpen) {
+                    item.classList.remove("active");
 
-            details.classList.remove("show");
-            button.classList.remove("open");
+                });
 
-        } else {
 
-            details.classList.add("show");
-            button.classList.add("open");
+            /* Open selected course */
+
+            if (!isOpen) {
+
+                details.classList.add("show");
+
+                button.classList.add("active");
+
+            }
 
         }
 
-    }
-
-</script>
+    </script>
 
 
-<!-- =========================================================
-     MAIN WEBSITE JAVASCRIPT
-========================================================= -->
+    <!-- Main Website JavaScript -->
 
-<script src="js/script.js"></script>
-
+    <script src="js/script.js"></script>
 
 </body>
 </html>
