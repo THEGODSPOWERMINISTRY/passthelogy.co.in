@@ -10,36 +10,285 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- AOS Animation -->
     <link rel="stylesheet"
           href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-    <!-- Main Website CSS -->
+    <!-- Existing Website CSS -->
     <link rel="stylesheet" href="css/style.css">
 
 
     <style>
 
         /* =========================================================
-           PASS THEOLOGICAL SEMINARY
-           ADVANCED CONTACT PAGE
+           CONTACT PAGE - COMPLETE OVERRIDE
            ========================================================= */
 
         :root {
-            --pass-blue: #1a365d;
-            --pass-blue-light: #294f7d;
-            --pass-gold: #d4a85f;
-            --pass-gold-light: #f1d59d;
-            --pass-text: #52647a;
-            --pass-white: #ffffff;
-            --pass-bg: #f4f8fc;
+            --primary: #1f426f;
+            --primary-dark: #16345a;
+            --gold: #c9a15a;
+            --gold-light: #e2c58b;
+            --cream: #faf7f0;
+            --light: #f4f7fb;
+            --text: #344054;
+            --muted: #667085;
+            --white: #ffffff;
+            --border: #e1e7ef;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: #f7f9fc;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================================
+           TOP BAR
+           ========================================================= */
+
+        .contact-topbar {
+            width: 100%;
+            background: linear-gradient(135deg, #17385f, #234a79);
+            color: #ffffff;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-topbar-inner {
+            width: min(1240px, 92%);
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 44px;
+        }
+
+        .contact-top-info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .contact-top-info span {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            white-space: nowrap;
+        }
+
+        .contact-top-info i {
+            color: #e1b969;
+        }
+
+        .contact-social {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .contact-social a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .contact-social a:hover {
+            color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           MAIN HEADER
+           ========================================================= */
+
+        .contact-header {
+            width: 100%;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid #edf0f4;
+            box-shadow: 0 5px 20px rgba(20, 42, 70, 0.06);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .contact-header-inner {
+            width: min(1240px, 92%);
+            height: 92px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+
+        /* =========================================================
+           IMPORTANT LOGO FIX
+           ========================================================= */
+
+        .contact-logo-area {
+            display: flex !important;
+            align-items: center !important;
+            gap: 14px !important;
+            text-decoration: none !important;
+
+            width: auto !important;
+            height: 70px !important;
+
+            flex-shrink: 0 !important;
+            overflow: visible !important;
+        }
+
+        /*
+           THIS PREVENTS THE LOGO FROM BECOMING HUGE
+        */
+
+        .contact-logo-img {
+            display: block !important;
+
+            width: 62px !important;
+            height: 62px !important;
+
+            min-width: 62px !important;
+            min-height: 62px !important;
+
+            max-width: 62px !important;
+            max-height: 62px !important;
+
+            object-fit: contain !important;
+
+            flex: 0 0 62px !important;
+
+            border: 0 !important;
+            outline: none !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .contact-brand {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            line-height: 1.1;
+
+            white-space: nowrap;
+        }
+
+        .contact-brand-title {
+            font-family: "Playfair Display", serif;
+            font-size: 27px;
+            font-weight: 700;
+            color: #1d3d67;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-brand-subtitle {
+            margin-top: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            color: #7b8799;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+           ========================================================= */
+
+        .contact-navigation {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .contact-navigation li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-navigation a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 18px;
+
+            color: #162d4b;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            border-radius: 9px;
+
+            transition: all 0.3s ease;
+        }
+
+        .contact-navigation a:hover {
+            color: var(--primary);
+            background: #f5f1e8;
+        }
+
+        .contact-navigation a.active {
+            color: var(--gold);
+            background: #fbf7ef;
+        }
+
+
+        /* =========================================================
+           MOBILE MENU BUTTON
+           ========================================================= */
+
+        .contact-menu-toggle {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: 1px solid #dce3ec;
+            border-radius: 9px;
+
+            background: #ffffff;
+            color: var(--primary);
+
+            font-size: 19px;
+            cursor: pointer;
         }
 
 
@@ -49,42 +298,38 @@
 
         .contact-hero {
             position: relative;
-            min-height: 330px;
+            min-height: 360px;
 
             display: flex;
             align-items: center;
-            justify-content: center;
 
             overflow: hidden;
 
             background:
-                radial-gradient(
-                    circle at 10% 20%,
-                    rgba(212,168,95,0.30),
-                    transparent 25%
-                ),
-
-                radial-gradient(
-                    circle at 90% 30%,
-                    rgba(75,130,185,0.30),
-                    transparent 28%
-                ),
-
                 linear-gradient(
-                    135deg,
-                    #102c4f 0%,
-                    #1a365d 48%,
-                    #274f79 100%
+                    120deg,
+                    rgba(20, 52, 88, 0.95),
+                    rgba(35, 74, 121, 0.88)
                 );
-
-            color: #ffffff;
-            text-align: center;
         }
-
 
         .contact-hero::before {
             content: "";
+            position: absolute;
 
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            background: rgba(225, 190, 119, 0.12);
+
+            top: -280px;
+            left: -100px;
+        }
+
+        .contact-hero::after {
+            content: "";
             position: absolute;
 
             width: 420px;
@@ -92,232 +337,95 @@
 
             border-radius: 50%;
 
-            top: -240px;
-            left: -120px;
+            background: rgba(255,255,255,0.05);
 
-            border: 1px solid rgba(255,255,255,0.10);
-
-            box-shadow:
-                0 0 0 50px rgba(255,255,255,0.025),
-                0 0 0 100px rgba(255,255,255,0.018);
+            right: -120px;
+            bottom: -220px;
         }
 
-
-        .contact-hero::after {
-            content: "";
-
-            position: absolute;
-
-            width: 380px;
-            height: 380px;
-
-            border-radius: 50%;
-
-            bottom: -250px;
-            right: -100px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(212,168,95,0.22),
-                    transparent 70%
-                );
-        }
-
-
-        .contact-hero-content {
+        .contact-hero-inner {
             position: relative;
-            z-index: 3;
+            z-index: 2;
 
-            max-width: 850px;
+            width: min(1100px, 92%);
+            margin: auto;
 
-            padding: 50px 20px;
+            text-align: center;
+
+            padding: 75px 20px;
         }
 
+        .hero-small-title {
+            color: #e2c27c;
 
-        .contact-hero-icon {
-            width: 68px;
-            height: 68px;
-
-            margin: 0 auto 18px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,0.10);
-
-            border: 1px solid rgba(255,255,255,0.22);
-
-            color: var(--pass-gold-light);
-
-            font-size: 27px;
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.15);
-        }
-
-
-        .contact-hero .small-title {
-            display: block;
-
-            color: #f0cf91;
-
-            font-size: 13px;
-
+            font-size: 14px;
             font-weight: 700;
 
             letter-spacing: 3px;
-
             text-transform: uppercase;
 
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-
 
         .contact-hero h1 {
             margin: 0;
 
-            color: #ffffff;
-
             font-family: "Playfair Display", serif;
 
-            font-size: 48px;
+            color: #ffffff;
 
-            line-height: 1.15;
+            font-size: clamp(42px, 6vw, 66px);
+
+            line-height: 1.08;
         }
 
-
         .contact-hero p {
-            max-width: 680px;
+            max-width: 750px;
+            margin: 22px auto 0;
 
-            margin: 17px auto 0;
+            color: rgba(255,255,255,0.88);
 
-            color: rgba(255,255,255,0.86);
-
-            font-size: 16px;
-
+            font-size: 17px;
             line-height: 1.8;
         }
 
 
         /* =========================================================
-           MAIN CONTACT SECTION
+           CONTACT MAIN SECTION
            ========================================================= */
 
         .contact-section {
             position: relative;
 
-            overflow: hidden;
-
             padding: 90px 0;
 
             background:
-
                 radial-gradient(
-                    circle at 8% 12%,
-                    rgba(212,168,95,0.20),
+                    circle at 10% 10%,
+                    rgba(201,161,90,0.09),
                     transparent 25%
                 ),
-
                 radial-gradient(
-                    circle at 95% 18%,
-                    rgba(74,125,181,0.17),
+                    circle at 90% 80%,
+                    rgba(31,66,111,0.08),
                     transparent 28%
                 ),
-
-                radial-gradient(
-                    circle at 50% 110%,
-                    rgba(26,54,93,0.10),
-                    transparent 35%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #f7fafc 0%,
-                    #eef5fb 48%,
-                    #fffaf2 100%
-                );
+                #f6f9fc;
         }
-
-
-        /* Decorative circles */
-
-        .contact-section::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 360px;
-            height: 360px;
-
-            border-radius: 50%;
-
-            top: -180px;
-            left: -160px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(212,168,95,0.22),
-                    transparent 70%
-                );
-
-            pointer-events: none;
-        }
-
-
-        .contact-section::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 450px;
-            height: 450px;
-
-            border-radius: 50%;
-
-            bottom: -280px;
-            right: -190px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(26,54,93,0.15),
-                    transparent 70%
-                );
-
-            pointer-events: none;
-        }
-
 
         .contact-container {
-
-            position: relative;
-
-            z-index: 3;
+            width: min(1180px, 92%);
+            margin: auto;
         }
 
-
-        /* =========================================================
-           TWO COLUMN LAYOUT
-           ========================================================= */
-
-        .contact-layout {
-
+        .contact-grid {
             display: grid;
 
-            grid-template-columns:
-                minmax(0, 1fr)
-                minmax(0, 0.95fr);
+            grid-template-columns: 1fr 1.05fr;
 
-            gap: 55px;
+            gap: 45px;
 
-            align-items: start;
+            align-items: stretch;
         }
 
 
@@ -325,55 +433,42 @@
            LEFT SIDE
            ========================================================= */
 
-        .contact-intro {
-
-            padding-top: 8px;
+        .contact-left {
+            padding: 10px 0;
         }
 
-
-        .contact-intro .section-subtitle {
-
+        .contact-label {
             display: inline-block;
 
-            color: #bd9150;
+            color: var(--gold);
 
-            font-size: 13px;
-
+            font-size: 14px;
             font-weight: 700;
 
             letter-spacing: 2px;
 
             text-transform: uppercase;
 
-            margin-bottom: 13px;
+            margin-bottom: 12px;
         }
 
-
-        .contact-intro h2 {
-
-            margin: 0 0 18px;
-
-            color: var(--pass-blue);
+        .contact-left h2 {
+            margin: 0 0 20px;
 
             font-family: "Playfair Display", serif;
 
-            font-size: 39px;
+            color: #1c3d66;
 
+            font-size: 38px;
             line-height: 1.2;
         }
 
-
-        .contact-intro > p {
-
-            max-width: 590px;
+        .contact-intro {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #667085;
 
             margin-bottom: 30px;
-
-            color: var(--pass-text);
-
-            font-size: 16px;
-
-            line-height: 1.85;
         }
 
 
@@ -381,270 +476,176 @@
            CONTACT CARDS
            ========================================================= */
 
-        .contact-info-card {
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
 
+        .contact-card {
             position: relative;
 
             display: flex;
-
             align-items: center;
 
-            gap: 19px;
+            gap: 18px;
 
-            margin-top: 18px;
+            padding: 22px;
 
-            padding: 21px;
+            background: rgba(255,255,255,0.96);
 
-            background:
-                rgba(255,255,255,0.88);
+            border: 1px solid #e1e7ef;
 
-            border: 1px solid rgba(26,54,93,0.08);
+            border-radius: 14px;
 
-            border-left:
-                4px solid var(--pass-gold);
+            box-shadow: 0 8px 25px rgba(31,66,111,0.06);
 
-            border-radius: 13px;
-
-            box-shadow:
-                0 10px 32px rgba(26,54,93,0.07);
-
-            backdrop-filter: blur(12px);
-
-            -webkit-backdrop-filter: blur(12px);
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
-        }
-
-
-        .contact-info-card:hover {
-
-            transform: translateY(-5px);
-
-            border-left-color: var(--pass-blue);
-
-            box-shadow:
-                0 17px 40px rgba(26,54,93,0.13);
-        }
-
-
-        .contact-icon {
-
-            flex-shrink: 0;
-
-            width: 58px;
-            height: 58px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border-radius: 50%;
-
-            color: #f3d18d;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #1a365d,
-                    #2b527d
-                );
-
-            font-size: 20px;
-
-            box-shadow:
-                0 7px 18px rgba(26,54,93,0.18);
-        }
-
-
-        .contact-info-card h3 {
-
-            margin: 0 0 5px;
-
-            color: var(--pass-blue);
-
-            font-size: 17px;
-
-            font-weight: 700;
-        }
-
-
-        .contact-info-card p {
-
-            margin: 0;
-
-            color: #68788d;
-
-            font-size: 14px;
-
-            line-height: 1.6;
-        }
-
-
-        /* =========================================================
-           QUICK CONNECT BAR
-           ========================================================= */
-
-        .quick-connect {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-
-            margin-top: 27px;
-        }
-
-
-        .quick-connect a {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            padding: 10px 15px;
-
-            border-radius: 30px;
-
-            text-decoration: none;
-
-            color: var(--pass-blue);
-
-            background: rgba(255,255,255,0.75);
-
-            border: 1px solid rgba(26,54,93,0.10);
-
-            font-size: 13px;
-
-            font-weight: 600;
-
-            transition: all 0.25s ease;
-        }
-
-
-        .quick-connect a:hover {
-
-            color: #ffffff;
-
-            background: var(--pass-blue);
-
-            transform: translateY(-2px);
-        }
-
-
-        .quick-connect i {
-
-            color: var(--pass-gold);
-        }
-
-
-        .quick-connect a:hover i {
-
-            color: #f3d18d;
-        }
-
-
-        /* =========================================================
-           FORM CARD
-           ========================================================= */
-
-        .contact-form-card {
-
-            position: relative;
+            transition: all 0.3s ease;
 
             overflow: hidden;
-
-            background:
-                rgba(255,255,255,0.95);
-
-            padding: 38px;
-
-            border-radius: 18px;
-
-            border:
-                1px solid rgba(212,168,95,0.20);
-
-            border-top:
-                5px solid var(--pass-gold);
-
-            box-shadow:
-                0 22px 55px rgba(26,54,93,0.12);
-
-            backdrop-filter: blur(14px);
-
-            -webkit-backdrop-filter: blur(14px);
         }
 
-
-        .contact-form-card::before {
-
+        .contact-card::before {
             content: "";
 
             position: absolute;
 
-            width: 210px;
-            height: 210px;
+            left: 0;
+            top: 0;
+
+            width: 4px;
+            height: 100%;
+
+            background: linear-gradient(
+                to bottom,
+                var(--gold),
+                var(--gold-light)
+            );
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 14px 35px rgba(31,66,111,0.12);
+
+            border-color: #d9c08c;
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             border-radius: 50%;
 
-            top: -120px;
-            right: -100px;
-
             background:
-                radial-gradient(
-                    circle,
-                    rgba(212,168,95,0.20),
-                    transparent 70%
+                linear-gradient(
+                    135deg,
+                    #eef4fa,
+                    #f8f3e8
                 );
 
-            pointer-events: none;
+            color: var(--gold);
+
+            font-size: 20px;
         }
 
+        .contact-card-content h3 {
+            margin: 0 0 6px;
 
-        .form-header {
+            color: #24466f;
 
-            position: relative;
-
-            margin-bottom: 27px;
-        }
-
-
-        .form-header h3 {
-
-            margin: 0 0 8px;
-
-            color: var(--pass-blue);
-
-            font-size: 22px;
-
+            font-size: 16px;
             font-weight: 700;
         }
 
-
-        .form-header p {
-
+        .contact-card-content p {
             margin: 0;
 
-            color: #718096;
+            color: #667085;
 
-            font-size: 14px;
+            font-size: 15px;
 
-            line-height: 1.7;
+            line-height: 1.6;
+        }
+
+        .contact-card-content a {
+            color: #667085;
+            text-decoration: none;
+        }
+
+        .contact-card-content a:hover {
+            color: var(--primary);
         }
 
 
-        .form-title-icon {
+        /* =========================================================
+           RIGHT FORM CARD
+           ========================================================= */
 
-            color: var(--pass-gold);
+        .contact-form-card {
+            position: relative;
 
-            margin-right: 8px;
+            background: #ffffff;
+
+            border-radius: 18px;
+
+            padding: 42px;
+
+            border: 1px solid #e3e8ef;
+
+            box-shadow:
+                0 18px 55px rgba(31,66,111,0.10);
+
+            overflow: hidden;
+        }
+
+        .contact-form-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--gold),
+                    #e8cf98,
+                    var(--gold)
+                );
+        }
+
+        .form-heading {
+            margin-bottom: 28px;
+        }
+
+        .form-heading h2 {
+            margin: 0 0 8px;
+
+            color: #203f68;
+
+            font-size: 27px;
+            font-weight: 700;
+        }
+
+        .form-heading p {
+            margin: 0;
+
+            color: #7b8798;
+
+            font-size: 14px;
+            line-height: 1.6;
         }
 
 
@@ -652,122 +653,85 @@
            FORM
            ========================================================= */
 
-        .form-row {
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 19px;
+        }
 
+        .form-row {
             display: grid;
 
-            grid-template-columns:
-                1fr 1fr;
+            grid-template-columns: 1fr 1fr;
 
-            gap: 16px;
+            gap: 17px;
         }
-
 
         .form-group {
-
-            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
-
 
         .form-group label {
+            color: #29496f;
 
-            display: block;
-
-            margin-bottom: 7px;
-
-            color: var(--pass-blue);
-
-            font-size: 13px;
-
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 600;
         }
-
 
         .form-group input,
         .form-group textarea {
-
             width: 100%;
 
-            box-sizing: border-box;
+            border: 1px solid #d4dce7;
 
-            border:
-                1px solid #d6e0eb;
+            background: #fbfcfe;
 
-            background:
-                #fbfdff;
+            border-radius: 8px;
 
-            color:
-                #263b55;
+            padding: 13px 14px;
 
-            border-radius:
-                8px;
+            color: #344054;
 
-            padding:
-                13px 14px;
+            font-family: "Inter", sans-serif;
 
-            font-family:
-                "Inter",
-                sans-serif;
+            font-size: 14px;
 
-            font-size:
-                14px;
+            outline: none;
 
-            transition:
-                border-color 0.25s ease,
-                box-shadow 0.25s ease,
-                background 0.25s ease;
+            transition: all 0.25s ease;
         }
-
 
         .form-group input {
-
-            height: 47px;
+            height: 48px;
         }
 
-
         .form-group textarea {
-
             min-height: 135px;
 
             resize: vertical;
         }
 
-
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-
-            color: #9aa8b8;
+            color: #98a2b3;
         }
-
 
         .form-group input:focus,
         .form-group textarea:focus {
-
-            outline: none;
+            border-color: var(--gold);
 
             background: #ffffff;
 
-            border-color:
-                var(--pass-gold);
-
             box-shadow:
-                0 0 0 4px rgba(212,168,95,0.10);
+                0 0 0 3px rgba(201,161,90,0.13);
         }
 
-
-        /* =========================================================
-           SUBMIT BUTTON
-           ========================================================= */
-
         .submit-btn {
-
-            position: relative;
-
-            overflow: hidden;
-
             width: 100%;
 
-            min-height: 50px;
+            min-height: 51px;
 
             border: none;
 
@@ -776,514 +740,697 @@
             background:
                 linear-gradient(
                     135deg,
-                    #1a365d,
-                    #294f7d
+                    #1b3c65,
+                    #274f7e
                 );
 
             color: #ffffff;
 
-            font-family:
-                "Inter",
-                sans-serif;
-
             font-size: 14px;
-
             font-weight: 700;
 
             cursor: pointer;
 
-            box-shadow:
-                0 9px 23px rgba(26,54,93,0.18);
+            transition: all 0.3s ease;
 
-            transition:
-                all 0.3s ease;
+            box-shadow:
+                0 7px 18px rgba(31,66,111,0.18);
         }
 
+        .submit-btn i {
+            margin-right: 8px;
+        }
 
         .submit-btn:hover {
-
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
 
             background:
                 linear-gradient(
                     135deg,
-                    #d4a85f,
-                    #b88943
+                    #c19a54,
+                    #d7b873
                 );
 
             box-shadow:
-                0 12px 27px rgba(212,168,95,0.25);
-        }
-
-
-        .submit-btn i {
-
-            margin-right: 8px;
+                0 10px 24px rgba(201,161,90,0.25);
         }
 
 
         /* =========================================================
-           SMALL NOTE
+           SUCCESS MESSAGE
            ========================================================= */
 
-        .form-note {
+        .form-message {
+            display: none;
 
-            margin-top: 14px;
+            margin-top: 15px;
+
+            padding: 13px 15px;
+
+            border-radius: 8px;
+
+            background: #edf8f1;
+
+            border: 1px solid #c8e8d2;
+
+            color: #23723e;
+
+            font-size: 14px;
 
             text-align: center;
+        }
 
-            color: #8997a8;
 
-            font-size: 11px;
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .contact-footer {
+            background:
+                linear-gradient(
+                    135deg,
+                    #172f50,
+                    #203f68
+                );
+
+            color: #ffffff;
+        }
+
+        .footer-main {
+            width: min(1180px, 92%);
+            margin: auto;
+
+            padding: 65px 0 45px;
+
+            display: grid;
+
+            grid-template-columns: 1.4fr 1fr 1fr;
+
+            gap: 50px;
+        }
+
+        .footer-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        /*
+           FOOTER LOGO ALSO PROTECTED
+        */
+
+        .footer-logo-img {
+            display: block !important;
+
+            width: 58px !important;
+            height: 58px !important;
+
+            min-width: 58px !important;
+            min-height: 58px !important;
+
+            max-width: 58px !important;
+            max-height: 58px !important;
+
+            object-fit: contain !important;
+
+            flex: 0 0 58px !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            border-radius: 4px;
+        }
+
+        .footer-brand-title {
+            font-family: "Playfair Display", serif;
+
+            font-size: 23px;
+
+            font-weight: 700;
+        }
+
+        .footer-brand-subtitle {
+            color: #b8c4d4;
+
+            font-size: 10px;
+
+            letter-spacing: 1.2px;
+
+            font-weight: 600;
+        }
+
+        .footer-description {
+            margin-top: 20px;
+
+            max-width: 390px;
+
+            color: #c2ccda;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .footer-column h3 {
+            margin: 0 0 18px;
+
+            color: #ffffff;
+
+            font-size: 16px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 11px;
+        }
+
+        .footer-column a {
+            color: #c5cfdd;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.25s ease;
+        }
+
+        .footer-column a:hover {
+            color: #e2c27c;
+            padding-left: 3px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 11px;
+
+            margin-bottom: 14px;
+
+            color: #c5cfdd;
+
+            font-size: 14px;
 
             line-height: 1.6;
         }
 
+        .footer-contact-item i {
+            width: 18px;
 
-        .form-note i {
+            color: #d7b873;
 
-            color: var(--pass-gold);
+            margin-top: 3px;
+        }
 
-            margin-right: 4px;
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.10);
+
+            text-align: center;
+
+            padding: 19px 15px;
+
+            color: #aebacc;
+
+            font-size: 13px;
         }
 
 
         /* =========================================================
-           MOBILE
+           RESPONSIVE
            ========================================================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1050px) {
 
-            .contact-layout {
-
-                grid-template-columns: 1fr;
-
-                gap: 40px;
+            .contact-navigation ul {
+                gap: 1px;
             }
 
-            .contact-form-card {
-
-                padding: 30px;
-            }
-        }
-
-
-        @media (max-width: 768px) {
-
-            .contact-hero {
-
-                min-height: 300px;
-            }
-
-
-            .contact-hero h1 {
-
-                font-size: 36px;
-            }
-
-
-            .contact-hero p {
-
+            .contact-navigation a {
+                padding: 12px 11px;
                 font-size: 14px;
             }
 
-
-            .contact-section {
-
-                padding: 65px 0;
-            }
-
-
-            .contact-intro h2 {
-
-                font-size: 32px;
-            }
-
-
-            .form-row {
-
-                grid-template-columns: 1fr;
-
-                gap: 0;
-            }
-
-
-            .contact-form-card {
-
-                padding: 24px;
-
-                border-radius: 14px;
-            }
-
-
-            .contact-info-card {
-
-                padding: 18px;
-            }
-
-
-            .quick-connect {
-
-                gap: 8px;
-            }
-
-
-            .quick-connect a {
-
-                font-size: 12px;
-
-                padding: 9px 12px;
+            .contact-header-inner {
+                width: 94%;
             }
         }
 
 
-        @media (max-width: 480px) {
+        @media (max-width: 850px) {
+
+            .contact-header-inner {
+                height: 78px;
+            }
+
+            .contact-logo-area {
+                height: 62px !important;
+            }
+
+            .contact-logo-img {
+                width: 54px !important;
+                height: 54px !important;
+
+                min-width: 54px !important;
+                min-height: 54px !important;
+
+                max-width: 54px !important;
+                max-height: 54px !important;
+
+                flex-basis: 54px !important;
+            }
+
+            .contact-brand-title {
+                font-size: 23px;
+            }
+
+            .contact-brand-subtitle {
+                font-size: 9px;
+            }
+
+            .contact-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .contact-navigation {
+                display: none;
+
+                position: absolute;
+
+                top: 100%;
+                left: 0;
+
+                width: 100%;
+
+                background: #ffffff;
+
+                border-top: 1px solid #edf0f4;
+
+                box-shadow: 0 15px 25px rgba(0,0,0,0.08);
+            }
+
+            .contact-navigation.open {
+                display: block;
+            }
+
+            .contact-navigation ul {
+                flex-direction: column;
+
+                align-items: stretch;
+
+                padding: 12px;
+            }
+
+            .contact-navigation a {
+                width: 100%;
+                justify-content: flex-start;
+
+                padding: 13px 15px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-info {
+                grid-column: 1 / -1;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .contact-topbar-inner {
+                justify-content: center;
+            }
+
+            .contact-top-info {
+                gap: 15px;
+                font-size: 12px;
+            }
+
+            .contact-top-info span:last-child {
+                display: none;
+            }
+
+            .contact-social {
+                display: none;
+            }
+
+            .contact-header-inner {
+                width: 92%;
+            }
+
+            .contact-logo-img {
+                width: 50px !important;
+                height: 50px !important;
+
+                min-width: 50px !important;
+                min-height: 50px !important;
+
+                max-width: 50px !important;
+                max-height: 50px !important;
+
+                flex-basis: 50px !important;
+            }
+
+            .contact-brand-title {
+                font-size: 21px;
+            }
+
+            .contact-brand-subtitle {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .contact-hero-inner {
+                padding: 65px 15px;
+            }
 
             .contact-hero h1 {
+                font-size: 40px;
+            }
 
+            .contact-hero p {
+                font-size: 14px;
+            }
+
+            .contact-section {
+                padding: 60px 0;
+            }
+
+            .contact-left h2 {
                 font-size: 31px;
             }
 
-
-            .contact-hero-icon {
-
-                width: 58px;
-                height: 58px;
-
-                font-size: 22px;
+            .contact-form-card {
+                padding: 27px 20px;
             }
 
-
-            .contact-intro h2 {
-
-                font-size: 29px;
+            .form-row {
+                grid-template-columns: 1fr;
             }
 
-
-            .contact-info-card {
-
-                gap: 13px;
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
 
+            .footer-info {
+                grid-column: auto;
+            }
+        }
 
-            .contact-icon {
 
-                width: 50px;
-                height: 50px;
+        @media (max-width: 400px) {
 
-                font-size: 17px;
+            .contact-brand-subtitle {
+                display: none;
+            }
+
+            .contact-brand-title {
+                font-size: 20px;
+            }
+
+            .contact-logo-img {
+                width: 46px !important;
+                height: 46px !important;
+
+                min-width: 46px !important;
+                min-height: 46px !important;
+
+                max-width: 46px !important;
+                max-height: 46px !important;
+
+                flex-basis: 46px !important;
+            }
+
+            .contact-hero h1 {
+                font-size: 34px;
             }
         }
 
     </style>
-
 </head>
 
 
 <body>
 
 
-    <!-- =====================================================
-         TOP BAR
-         ===================================================== -->
+<!-- =========================================================
+     TOP BAR
+     ========================================================= -->
 
-    <div class="top-bar">
+<div class="contact-topbar">
 
-        <div class="container top-bar-content">
+    <div class="contact-topbar-inner">
 
-            <div class="top-info">
+        <div class="contact-top-info">
 
-                <span>
-                    <i class="fas fa-phone-alt"></i>
-                    +91 8839939678
-                </span>
+            <span>
+                <i class="fas fa-phone-alt"></i>
+                +91 8839939678
+            </span>
 
-                <span>
-                    <i class="fas fa-envelope"></i>
-                    pts.pass2020@gmail.com
-                </span>
+            <span>
+                <i class="fas fa-envelope"></i>
+                pts.pass2020@gmail.com
+            </span>
 
-            </div>
-
-
-            <div class="top-socials">
-
-                <a href="#"
-                   aria-label="Facebook">
-
-                    <i class="fab fa-facebook-f"></i>
-
-                </a>
+        </div>
 
 
-                <a href="#"
-                   aria-label="YouTube">
+        <div class="contact-social">
 
-                    <i class="fab fa-youtube"></i>
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
 
-                </a>
-
-            </div>
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
 
         </div>
 
     </div>
 
-
-
-    <!-- =====================================================
-         MAIN NAVIGATION
-         ===================================================== -->
-
-    <header class="main-header">
-
-        <div class="container nav-container">
-
-
-            <!-- LOGO -->
-
-            <a href="index.html"
-               class="logo-area"
-               style="
-                    display:flex;
-                    align-items:center;
-                    gap:15px;
-                    text-decoration:none;
-               ">
-
-                <img src="images/logo.png"
-                     alt="PASS Theological Seminary Logo"
-                     class="logo-img">
-
-
-                <div class="logo-text"
-                     style="
-                        display:flex;
-                        flex-direction:column;
-                     ">
-
-                    <span class="brand-title"
-                          style="
-                            font-family:'Playfair Display',serif;
-                            font-size:24px;
-                            font-weight:700;
-                            color:#1a365d;
-                            line-height:1.1;
-                          ">
-
-                        PASS
-
-                    </span>
-
-
-                    <span class="brand-subtitle"
-                          style="
-                            font-family:'Inter',sans-serif;
-                            font-size:12px;
-                            text-transform:uppercase;
-                            letter-spacing:1px;
-                            color:#718096;
-                            font-weight:600;
-                          ">
-
-                        Theological Seminary
-
-                    </span>
-
-                </div>
-
-            </a>
+</div>
 
 
 
-            <!-- MOBILE MENU BUTTON -->
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
-            <button class="menu-toggle"
-                    aria-label="Toggle navigation">
+<header class="contact-header">
 
-                <i class="fas fa-bars"></i>
-
-            </button>
-
+    <div class="contact-header-inner">
 
 
-            <!-- NAVIGATION -->
+        <!-- LOGO -->
 
-            <nav class="nav-menu">
+        <a href="index.html"
+           class="contact-logo-area">
 
-                <ul>
+            <img
+                src="images/logo.png"
+                alt="PASS Theological Seminary Logo"
+                class="contact-logo-img"
+            >
 
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
+            <div class="contact-brand">
 
-                    <li>
-                        <a href="about.html">
-                            About
-                        </a>
-                    </li>
+                <span class="contact-brand-title">
+                    PASS
+                </span>
 
-                    <li>
-                        <a href="courses.html">
-                            Courses
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="admission.html">
-                            Admission
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="gallery.html">
-                            Gallery
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="downloads.html">
-                            Downloads
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html"
-                           class="active">
-
-                            Contact
-
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         CONTACT HERO
-         ===================================================== -->
-
-    <section class="contact-hero">
-
-        <div class="contact-hero-content"
-             data-aos="fade-up">
-
-
-            <div class="contact-hero-icon">
-
-                <i class="fas fa-envelope-open-text"></i>
+                <span class="contact-brand-subtitle">
+                    Theological Seminary
+                </span>
 
             </div>
 
-
-            <span class="small-title">
-
-                PASS Theological Seminary
-
-            </span>
+        </a>
 
 
-            <h1>
 
-                Connect With Us
+        <!-- MOBILE MENU BUTTON -->
 
-            </h1>
+        <button
+            class="contact-menu-toggle"
+            id="contactMenuToggle"
+            aria-label="Open Navigation"
+            type="button"
+        >
+
+            <i class="fas fa-bars"></i>
+
+        </button>
 
 
-            <p>
 
-                We would be glad to hear from you.
-                Whether you have questions about admissions,
-                courses, examinations, or theological education,
-                our team is ready to assist you.
+        <!-- NAVIGATION -->
 
-            </p>
+        <nav
+            class="contact-navigation"
+            id="contactNavigation"
+        >
 
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="courses.html">
+                        Courses
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admission.html">
+                        Admission
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="active">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="contact-hero">
+
+    <div
+        class="contact-hero-inner"
+        data-aos="fade-up"
+    >
+
+        <div class="hero-small-title">
+            PASS Theological Seminary
         </div>
 
-    </section>
+        <h1>
+            Get In Touch
+        </h1>
+
+        <p>
+            We would be delighted to hear from you.
+            Whether you are an aspiring student, church partner,
+            alumnus, or simply have a question, our team is here
+            to assist you.
+        </p>
+
+    </div>
+
+</section>
 
 
 
-    <!-- =====================================================
-         CONTACT SECTION
-         ===================================================== -->
+<!-- =========================================================
+     CONTACT SECTION
+     ========================================================= -->
 
-    <section class="contact-section">
+<section class="contact-section">
 
-        <div class="container contact-container">
+    <div class="contact-container">
 
-
-            <div class="contact-layout">
-
-
-                <!-- =================================================
-                     LEFT SIDE
-                     ================================================= -->
-
-                <div class="contact-intro"
-                     data-aos="fade-right">
+        <div class="contact-grid">
 
 
-                    <span class="section-subtitle">
+            <!-- =================================================
+                 LEFT
+                 ================================================= -->
 
-                        Reach Out Directly
+            <div
+                class="contact-left"
+                data-aos="fade-right"
+            >
 
-                    </span>
+                <span class="contact-label">
+                    Reach Out Directly
+                </span>
+
+                <h2>
+                    Contact Information
+                </h2>
+
+                <p class="contact-intro">
+
+                    Whether you are an aspiring student,
+                    a local church partner, or an alumnus,
+                    feel free to reach out to us directly
+                    through any of the channels below.
+
+                </p>
 
 
-                    <h2>
 
-                        Contact Information
-
-                    </h2>
-
-
-                    <p>
-
-                        Whether you are an aspiring student,
-                        a local church partner, or an alumnus,
-                        feel free to reach out to us directly
-                        through any of the channels below.
-
-                    </p>
-
+                <div class="contact-cards">
 
 
                     <!-- MOBILE -->
 
-                    <div class="contact-info-card">
+                    <div class="contact-card">
 
                         <div class="contact-icon">
-
                             <i class="fas fa-phone-alt"></i>
-
                         </div>
 
-
-                        <div>
+                        <div class="contact-card-content">
 
                             <h3>
-
                                 Mobile Contact Number
-
                             </h3>
 
-
                             <p>
-
-                                +91 8839939678
-
+                                <a href="tel:+918839939678">
+                                    +91 8839939678
+                                </a>
                             </p>
 
                         </div>
@@ -1294,28 +1441,22 @@
 
                     <!-- EMAIL -->
 
-                    <div class="contact-info-card">
+                    <div class="contact-card">
 
                         <div class="contact-icon">
-
                             <i class="fas fa-envelope"></i>
-
                         </div>
 
-
-                        <div>
+                        <div class="contact-card-content">
 
                             <h3>
-
                                 Official Mailing Address
-
                             </h3>
 
-
                             <p>
-
-                                pts.pass2020@gmail.com
-
+                                <a href="mailto:pts.pass2020@gmail.com">
+                                    pts.pass2020@gmail.com
+                                </a>
                             </p>
 
                         </div>
@@ -1324,31 +1465,22 @@
 
 
 
-                    <!-- DIGITAL PORTAL -->
+                    <!-- WEBSITE -->
 
-                    <div class="contact-info-card">
+                    <div class="contact-card">
 
                         <div class="contact-icon">
-
                             <i class="fas fa-globe"></i>
-
                         </div>
 
-
-                        <div>
+                        <div class="contact-card-content">
 
                             <h3>
-
                                 Digital Portal
-
                             </h3>
 
-
                             <p>
-
-                                PASS Theological Seminary
-                                Online
-
+                                PASS Theological Seminary Online
                             </p>
 
                         </div>
@@ -1357,520 +1489,516 @@
 
 
 
-                    <!-- QUICK CONNECT -->
+                    <!-- ADMISSIONS -->
 
-                    <div class="quick-connect">
+                    <div class="contact-card">
 
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
 
-                        <a href="tel:+918839939678">
-
-                            <i class="fas fa-phone"></i>
-
-                            Call Us
-
-                        </a>
-
-
-                        <a href="mailto:pts.pass2020@gmail.com">
-
-                            <i class="fas fa-envelope"></i>
-
-                            Email Us
-
-                        </a>
-
-
-                        <a href="https://wa.me/918839939678"
-                           target="_blank"
-                           rel="noopener">
-
-                            <i class="fab fa-whatsapp"></i>
-
-                            WhatsApp
-
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- =================================================
-                     RIGHT SIDE – INQUIRY FORM
-                     ================================================= -->
-
-                <div data-aos="fade-left">
-
-
-                    <div class="contact-form-card">
-
-
-                        <div class="form-header">
+                        <div class="contact-card-content">
 
                             <h3>
-
-                                <i class="fas fa-paper-plane form-title-icon"></i>
-
-                                Send an Inquiry
-
+                                Admissions & Courses
                             </h3>
 
-
                             <p>
-
-                                Have a question about courses,
-                                admissions, fees, examinations,
-                                or the seminary? Send us a message.
-
+                                Explore our theological programs
+                                and online admission portal.
                             </p>
 
                         </div>
 
-
-
-                        <form id="contactForm">
-
-
-                            <!-- NAME + EMAIL -->
-
-                            <div class="form-row">
-
-
-                                <div class="form-group">
-
-                                    <label for="fullName">
-
-                                        Your Full Name
-
-                                    </label>
-
-
-                                    <input
-                                        type="text"
-                                        id="fullName"
-                                        name="fullName"
-                                        placeholder="John Doe"
-                                        required>
-
-                                </div>
-
-
-
-                                <div class="form-group">
-
-                                    <label for="email">
-
-                                        Email Address
-
-                                    </label>
-
-
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        placeholder="john@example.com"
-                                        required>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <!-- PHONE -->
-
-                            <div class="form-group">
-
-                                <label for="phone">
-
-                                    Phone / Mobile Number
-
-                                </label>
-
-
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="8839939678">
-
-                            </div>
-
-
-
-                            <!-- MESSAGE -->
-
-                            <div class="form-group">
-
-                                <label for="message">
-
-                                    Detailed Message
-
-                                </label>
-
-
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    placeholder="Type your query regarding courses, fees, admissions, examinations, or other matters here..."
-                                    required></textarea>
-
-                            </div>
-
-
-
-                            <!-- SUBMIT -->
-
-                            <button
-                                type="submit"
-                                class="submit-btn">
-
-                                <i class="fas fa-paper-plane"></i>
-
-                                Submit Message
-
-                            </button>
-
-
-                            <div class="form-note">
-
-                                <i class="fas fa-shield-alt"></i>
-
-                                Your information is used only
-                                for responding to your inquiry.
-
-                            </div>
-
-
-                        </form>
-
                     </div>
+
 
                 </div>
 
-
             </div>
 
-        </div>
-
-    </section>
 
 
+            <!-- =================================================
+                 RIGHT FORM
+                 ================================================= -->
 
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
+            <div
+                class="contact-form-card"
+                data-aos="fade-left"
+            >
 
-    <footer class="main-footer">
+                <div class="form-heading">
 
+                    <h2>
+                        Send an Inquiry
+                    </h2>
 
-        <div class="container footer-grid">
-
-
-            <!-- FOOTER INFO -->
-
-            <div class="footer-info">
-
-
-                <div class="logo-area light"
-                     style="
-                        display:flex;
-                        align-items:center;
-                        gap:15px;
-                     ">
-
-
-                    <img
-                        src="images/logo.png"
-                        alt="PASS Theological Seminary Logo"
-                        class="logo-img"
-                        style="
-                            height:55px;
-                            width:auto;
-                            display:block;
-                            border-radius:4px;
-                        ">
-
-
-                    <div class="logo-text"
-                         style="
-                            display:flex;
-                            flex-direction:column;
-                            text-align:left;
-                         ">
-
-
-                        <span
-                            class="brand-title"
-                            style="
-                                font-family:'Playfair Display',serif;
-                                font-size:22px;
-                                font-weight:700;
-                                color:#ffffff;
-                                line-height:1.1;
-                            ">
-
-                            PASS
-
-                        </span>
-
-
-                        <span
-                            class="brand-subtitle"
-                            style="
-                                font-family:'Inter',sans-serif;
-                                font-size:11px;
-                                text-transform:uppercase;
-                                letter-spacing:1px;
-                                color:#a0aec0;
-                            ">
-
-                            Theological Seminary
-
-                        </span>
-
-                    </div>
+                    <p>
+                        Have a question regarding courses,
+                        admissions, examinations, or the seminary?
+                        Send us a message.
+                    </p>
 
                 </div>
 
 
 
-                <p style="margin-top:20px;">
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                >
 
-                    Equipping faithful servants for
-                    gospel ministry, cross-cultural missions,
-                    and theological leadership.
 
-                </p>
+                    <!-- NAME + EMAIL -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Your Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="John Doe"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="john@example.com"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone / Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="8839939678"
+                        >
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Detailed Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Type your query regarding courses, fees, admissions, examinations, or any other information here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+
+                        <i class="fas fa-paper-plane"></i>
+
+                        Submit Message
+
+                    </button>
+
+
+                </form>
+
+
+
+                <div
+                    class="form-message"
+                    id="formMessage"
+                >
+
+                    Thank you! Your inquiry has been prepared.
+                    Please send the email from your email application.
+
+                </div>
 
             </div>
-
-
-
-            <!-- QUICK LINKS -->
-
-            <div class="footer-links">
-
-                <h3>
-
-                    Quick Links
-
-                </h3>
-
-
-                <ul>
-
-                    <li>
-                        <a href="about.html">
-                            About Us
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="courses.html">
-                            Our Programs
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="admission.html">
-                            Admissions
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="gallery.html">
-                            Campus Gallery
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="downloads.html">
-                            Downloads
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- FOOTER CONTACT -->
-
-            <div class="footer-contact">
-
-                <h3>
-
-                    Contact Info
-
-                </h3>
-
-
-                <p>
-
-                    <i class="fas fa-phone-alt"></i>
-
-                    +91 8839939678
-
-                </p>
-
-
-                <p>
-
-                    <i class="fas fa-envelope"></i>
-
-                    pts.pass2020@gmail.com
-
-                </p>
-
-
-                <p>
-
-                    <i class="fas fa-globe"></i>
-
-                    Online Seminary Portal
-
-                </p>
-
-            </div>
-
 
         </div>
 
+    </div>
+
+</section>
 
 
-        <!-- FOOTER BOTTOM -->
 
-        <div class="footer-bottom text-center">
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
-            <p>
+<footer class="contact-footer">
 
-                &copy; 2026 PASS Theological Seminary.
-                All Rights Reserved.
+
+    <div class="footer-main">
+
+
+        <!-- FOOTER INFO -->
+
+        <div class="footer-info">
+
+            <div class="footer-logo-area">
+
+                <img
+                    src="images/logo.png"
+                    alt="PASS Logo"
+                    class="footer-logo-img"
+                >
+
+                <div>
+
+                    <div class="footer-brand-title">
+                        PASS
+                    </div>
+
+                    <div class="footer-brand-subtitle">
+                        THEOLOGICAL SEMINARY
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p class="footer-description">
+
+                Equipping faithful servants for gospel ministry,
+                cross-cultural missions, and theological leadership.
 
             </p>
 
         </div>
 
 
-    </footer>
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="courses.html">
+                        Our Programs
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admission.html">
+                        Admissions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
 
 
 
-    <!-- =====================================================
-         AOS
-         ===================================================== -->
+        <!-- CONTACT -->
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <div class="footer-column">
+
+            <h3>
+                Contact Info
+            </h3>
 
 
-    <script>
+            <div class="footer-contact-item">
 
-        AOS.init({
+                <i class="fas fa-phone-alt"></i>
 
-            once: true,
+                <span>
+                    +91 8839939678
+                </span>
 
-            duration: 800,
+            </div>
 
-            easing: "ease-out-cubic"
+
+            <div class="footer-contact-item">
+
+                <i class="fas fa-envelope"></i>
+
+                <span>
+                    pts.pass2020@gmail.com
+                </span>
+
+            </div>
+
+
+            <div class="footer-contact-item">
+
+                <i class="fas fa-globe"></i>
+
+                <span>
+                    PASS Theological Seminary
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        © 2026 PASS Theological Seminary.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     AOS
+     ========================================================= -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+<script>
+
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 80
+    });
+
+
+    /* =========================================================
+       MOBILE NAVIGATION
+       ========================================================= */
+
+    const menuToggle =
+        document.getElementById("contactMenuToggle");
+
+    const navigation =
+        document.getElementById("contactNavigation");
+
+
+    if (menuToggle && navigation) {
+
+        menuToggle.addEventListener("click", function () {
+
+            navigation.classList.toggle("open");
+
+            const icon =
+                menuToggle.querySelector("i");
+
+            if (navigation.classList.contains("open")) {
+
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+
+            } else {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            }
 
         });
 
-    </script>
 
+        /* Close menu after clicking link */
 
+        navigation.querySelectorAll("a").forEach(function(link) {
 
-    <!-- =====================================================
-         MAIN WEBSITE JAVASCRIPT
-         ===================================================== -->
+            link.addEventListener("click", function() {
 
-    <script src="js/script.js"></script>
+                navigation.classList.remove("open");
 
+                const icon =
+                    menuToggle.querySelector("i");
 
-    <!-- =====================================================
-         CONTACT FORM DEMO HANDLER
-         ===================================================== -->
-
-    <script>
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const contactForm =
-                document.getElementById("contactForm");
-
-
-            if (!contactForm) return;
-
-
-            contactForm.addEventListener("submit", function (event) {
-
-                event.preventDefault();
-
-
-                const button =
-                    contactForm.querySelector(".submit-btn");
-
-
-                const originalText =
-                    button.innerHTML;
-
-
-                button.innerHTML =
-                    '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-
-                button.disabled = true;
-
-
-                /*
-                 * This currently provides the visual form behaviour.
-                 *
-                 * IMPORTANT:
-                 * If you already have a Google Apps Script /
-                 * Form backend for your Contact page, connect
-                 * the form here instead of using this demo handler.
-                 */
-
-
-                setTimeout(function () {
-
-                    button.innerHTML =
-                        '<i class="fas fa-check-circle"></i> Message Ready';
-
-
-                    button.style.background =
-                        "linear-gradient(135deg,#2f855a,#38a169)";
-
-
-                    setTimeout(function () {
-
-                        contactForm.reset();
-
-
-                        button.innerHTML =
-                            originalText;
-
-
-                        button.disabled = false;
-
-
-                        button.style.background =
-                            "";
-
-                    }, 1800);
-
-
-                }, 900);
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
 
             });
 
         });
 
-    </script>
+    }
+
+
+
+    /* =========================================================
+       CONTACT FORM
+       ========================================================= */
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    const formMessage =
+        document.getElementById("formMessage");
+
+
+    if (contactForm) {
+
+        contactForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("fullName").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const message =
+                document.getElementById("message").value.trim();
+
+
+            if (!name || !email || !message) {
+
+                alert(
+                    "Please complete your name, email address and message."
+                );
+
+                return;
+
+            }
+
+
+            /*
+               Opens the visitor's email application.
+
+               IMPORTANT:
+               Change this email only if your official
+               admissions/contact email changes.
+            */
+
+            const recipient =
+                "pts.pass2020@gmail.com";
+
+
+            const subject =
+                encodeURIComponent(
+                    "Website Inquiry - PASS Theological Seminary"
+                );
+
+
+            const body =
+                encodeURIComponent(
+
+                    "PASS Theological Seminary Website Inquiry\n\n" +
+
+                    "Name: " + name + "\n" +
+
+                    "Email: " + email + "\n" +
+
+                    "Phone: " + phone + "\n\n" +
+
+                    "Message:\n" +
+                    message
+
+                );
+
+
+            window.location.href =
+                "mailto:" +
+                recipient +
+                "?subject=" +
+                subject +
+                "&body=" +
+                body;
+
+
+            formMessage.style.display = "block";
+
+        });
+
+    }
+
+</script>
+
+
+
+<!-- Existing Website JavaScript -->
+<script src="js/script.js"></script>
 
 
 </body>
